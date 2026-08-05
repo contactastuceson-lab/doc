@@ -132,5 +132,11 @@
       "x": "https://x.com/@ezagroup",
       "github": "https://github.com/ezagroup"
     }
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "background": {
+    "decoration": "gradient"
   }
 }
