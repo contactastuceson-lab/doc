@@ -1,0 +1,67 @@
+---
+title: "Automatisations & jobs cron"
+description: "Toutes les tâches récurrentes exécutées automatiquement"
+icon: "bot"
+---
+
+<CardGroup cols={2}>
+  <Card title="126 fonctions backend" color="#38aadc" icon="zap">
+    Certaines s'exécutent en cron, d'autres en trigger.
+  </Card>
+
+  <Card title="Logs systématiques" color="#a78bfa" icon="scroll-text">
+    Chaque run crée une entrée `AutomationLog`.
+  </Card>
+
+  <Card title="Filtres & recherche" color="#1dd8b4" icon="filter">
+    Par catégorie, statut, plage temps.
+  </Card>
+
+  <Card title="Actions rapides" color="#f59e0b" icon="rocket">
+    Relance manuelle, pause, purge.
+  </Card>
+</CardGroup>
+
+## L'entité `AutomationLog`
+
+| Champ | Description |
+| --- | --- |
+| `job_name` | Nom de la fonction |
+| `category` | posts, credits, notifications, moderation, billing... |
+| `status` | `success`, `partial`, `error`, `skipped` |
+| `run_at` | Heure d'exécution |
+| `duration_ms` | Temps d'exécution |
+| `items_processed` | Nombre d'items traités |
+| `error_message` | En cas d'échec |
+
+## Catégories principales
+
+| Catégorie | Exemples |
+| --- | --- |
+| **posts** | `publishScheduledPosts`, `expireStories` |
+| **credits** | `awardDailyLogin`, `processCreditsMonthlyReset` |
+| **notifications** | `sendDigest`, `notifyEventReminders` |
+| **moderation** | `moderateReportedContent`, `runModerationSweep` |
+| **billing** | `processDailyAdBudgets`, `renewSubscriptions` |
+| **support** | `escalateOldTickets`, `recoverAbandonedCarts` |
+| **cleanup** | `expireUsernameGrace`, `pruneOldSessions` |
+
+## Actions rapides
+
+<CardGroup cols={2}>
+  <Card title="Relancer maintenant" icon="refresh-cw">
+    Trigger immédiat d'un job.
+  </Card>
+
+  <Card title="Voir les erreurs" icon="triangle-alert">
+    Filtre auto sur status=error.
+  </Card>
+
+  <Card title="Purger logs > 90j" icon="trash-2">
+    Retention configurable.
+  </Card>
+
+  <Card title="Exporter" icon="download">
+    CSV pour analyse externe.
+  </Card>
+</CardGroup>

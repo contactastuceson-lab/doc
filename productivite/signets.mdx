@@ -1,0 +1,56 @@
+---
+title: "Signets & brouillons"
+description: "Sauvegarder des posts, gérer vos brouillons et publications programmées"
+icon: "bookmark"
+---
+
+<CardGroup cols={2}>
+  <Card title="Signets illimités" color="#38aadc" icon="bookmark">
+    Sauvegardez n'importe quel post pour le retrouver plus tard.
+  </Card>
+
+  <Card title="Brouillons" color="#a78bfa" icon="file-edit">
+    Rédigez, sauvegardez, revenez plus tard. Auto-save toutes les 30 secondes.
+  </Card>
+
+  <Card title="Publications programmées" color="#f59e0b" icon="calendar-clock">
+    Définissez `scheduled_at`. La tâche cron `publishScheduledPosts` publie à l'heure dite.
+  </Card>
+
+  <Card title="Organisation privée" color="#1dd8b4" icon="lock">
+    Signets et brouillons sont privés. Personne d'autre ne les voit.
+  </Card>
+</CardGroup>
+
+## Deux onglets
+
+| Onglet | Contenu |
+| --- | --- |
+| **Signets** | Posts sauvegardés via l'icône signet (entité `Bookmark`) |
+| **Brouillons** | Vos posts `is_draft: true`, non publiés |
+
+## L'entité `Bookmark`
+
+| Champ | Description |
+| --- | --- |
+| `user_id` | Propriétaire du signet |
+| `post_id` | Post sauvegardé |
+| `created_date` | Date de sauvegarde |
+
+## Cycle d'un brouillon
+
+<Note>
+  **Perk `scheduled_posts_until`.** La publication programmée est un avantage boutique. Vérifiez que votre `perks.scheduled_posts_until` est actif.
+</Note>
+
+## Cas d'usage
+
+<CardGroup cols={2}>
+  <Card title="Veille métier" icon="eye">
+    Sauvegardez les posts inspirants pour votre secteur.
+  </Card>
+
+  <Card title="Contenu programmé" icon="calendar">
+    Préparez une semaine de posts d'avance, publiez automatiquement.
+  </Card>
+</CardGroup>

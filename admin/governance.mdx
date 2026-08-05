@@ -1,0 +1,44 @@
+---
+title: "Gouvernance & rôles direction"
+description: "Gestion des rôles de direction et du conseil"
+icon: "crown"
+---
+
+<CardGroup cols={2}>
+  <Card title="Rôles de direction" color="#f59e0b" icon="crown">
+    owner, pdg\_adjoint, conseil\_admin, admin, directeur, responsable.
+  </Card>
+
+  <Card title="Validation double" color="#22c55e" icon="shield-check">
+    Changement de rôle direction nécessite confirmation.
+  </Card>
+
+  <Card title="PDG emails protégés" color="#ef4444" icon="lock">
+    Liste `PDG_EMAILS` et `PDG_ADJOINT_EMAILS` non modifiables via UI.
+  </Card>
+
+  <Card title="Journal complet" color="#a78bfa" icon="scroll-text">
+    Chaque changement journalisé dans `AuditLog`.
+  </Card>
+</CardGroup>
+
+## Rôles gérés ici
+
+| Rôle | Description |
+| --- | --- |
+| `owner` | Fondateur, pouvoirs illimités |
+| `pdg_adjoint` | PDG adjoint, mêmes pouvoirs que owner sauf sur owner lui-même |
+| `conseil_admin` | Conseil d'administration, gouvernance |
+| `admin` | Administration générale |
+| `directeur` | Direction opérationnelle |
+| `responsable` | Responsable métier |
+
+## Rôles opérationnels (autre panneau)
+
+- `event_manager`, `pilote`, `collaborateur_interne`, `collaborateur`, `vip`, `user`
+
+## Sécurité
+
+<Warning>
+  **Owner immuable via UI.** Le rôle `owner` ne peut pas être attribué ou retiré depuis l'interface. Modification par migration DB uniquement.
+</Warning>

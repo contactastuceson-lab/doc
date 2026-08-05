@@ -1,0 +1,45 @@
+---
+title: "Le panier"
+description: "Ajoutez plusieurs événements/récompenses et payez en un coup"
+icon: "shopping-cart"
+---
+
+<CardGroup cols={2}>
+  <Card title="Multi-items" color="#38aadc" icon="shopping-cart">
+    Regroupez plusieurs achats en crédits en une seule transaction.
+  </Card>
+
+  <Card title="Checkout instantané" color="#1dd8b4" icon="zap">
+    Fonction `checkoutCart` : débit, tickets générés, notifications envoyées.
+  </Card>
+
+  <Card title="Récupération abandon" color="#f59e0b" icon="undo">
+    Panier abandonné → rappel automatique via `recoverAbandonedCarts`.
+  </Card>
+
+  <Card title="Historique complet" color="#a78bfa" icon="history">
+    Toutes les commandes tracées dans `AuditLog`.
+  </Card>
+</CardGroup>
+
+## L'entité `Cart`
+
+| Champ | Description |
+| --- | --- |
+| `user_id` | Propriétaire du panier |
+| `items` | Tableau `{type, ref_id, credits, quantity}` |
+| `total_credits` | Somme calculée |
+| `status` | `active`, `checked_out`, `abandoned` |
+| `updated_at` | Auto-save toutes les 30s |
+
+## Types d'items supportés
+
+<CardGroup cols={3}>
+       
+</CardGroup>
+
+## Checkout
+
+<Warning>
+  **Crédits insuffisants ?** Le checkout échoue proprement. Rechargez via la boutique puis relancez.
+</Warning>

@@ -1,0 +1,74 @@
+---
+title: "Modération & signalements"
+description: "File, actions, sanctions"
+icon: "shield-alert"
+---
+
+<CardGroup cols={2}>
+  <Card title="File d'attente" color="#38aadc" icon="inbox">
+    Tous les signalements en attente `Report.status = pending`.
+  </Card>
+
+  <Card title="Modération IA" color="#a78bfa" icon="bot">
+    `runModerationSweep`, `moderateReportedContent`.
+  </Card>
+
+  <Card title="Actions graduées" color="#f59e0b" icon="stairs">
+    Avertissement → masquage → suspension → bannissement.
+  </Card>
+
+  <Card title="Historique complet" color="#1dd8b4" icon="scroll-text">
+    Chaque décision tracée dans `AuditLog`.
+  </Card>
+</CardGroup>
+
+## L'entité `Report`
+
+| Champ | Description |
+| --- | --- |
+| `reporter_id` | Qui signale |
+| `target_type` | `post`, `comment`, `user`, `community`, `message` |
+| `target_id` | ID de la cible |
+| `reason` | Catégorie du signalement |
+| `details` | Explication texte |
+| `status` | `pending`, `reviewing`, `resolved`, `dismissed` |
+| `moderator_id` | Qui a traité |
+| `moderator_notes` | Notes internes |
+| `resolved_at` | Date de résolution |
+
+## Raisons de signalement
+
+<CardGroup cols={3}>
+  <Card title="Harcèlement" color="#ef4444" icon="user-x">
+  </Card>
+
+  <Card title="Spam" color="#f59e0b" icon="mail-x">
+  </Card>
+
+  <Card title="Contenu illicite" color="#ef4444" icon="gavel">
+  </Card>
+
+  <Card title="Contrefaçon" color="#a78bfa" icon="copy-x">
+  </Card>
+
+  <Card title="Fake profile" color="#38aadc" icon="user-check">
+  </Card>
+
+  <Card title="Autre" color="#94a3b8" icon="more-horizontal">
+  </Card>
+</CardGroup>
+
+## Actions disponibles
+
+<Steps>
+</Steps>
+
+## Fonctions backend
+
+| Fonction | Rôle |
+| --- | --- |
+| `runModerationSweep` | Scan préventif des posts récents |
+| `moderateReportedContent` | Traitement IA d'un signalement |
+| `adminBanUser` | Bannissement |
+| `adminSuspendUser` | Suspension temporaire |
+| `sendUserAdminAction` | Notif email sanction |

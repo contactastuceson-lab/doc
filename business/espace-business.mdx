@@ -1,0 +1,63 @@
+---
+title: "Espace business"
+description: "L'espace dédié aux professionnels et organisations"
+icon: "briefcase"
+---
+
+<CardGroup cols={2}>
+  <Card title="Vitrine premium" color="#f59e0b" icon="sparkles">
+    Logo, bandeau, design avancé, mise en avant systématique.
+  </Card>
+
+  <Card title="Communauté épinglée" color="#38aadc" icon="map-pin">
+    Votre communauté en tête des listes de la catégorie.
+  </Card>
+
+  <Card title="Analytics avancées" color="#a78bfa" icon="line-chart">
+    Conversion, funnels, cohortes, rétention.
+  </Card>
+
+  <Card title="Campagnes ads" color="#1dd8b4" icon="megaphone">
+    Budget en crédits, ciblage précis, stats live.
+  </Card>
+</CardGroup>
+
+## Route publique
+
+`/business` — accessible sans compte, page de présentation des offres.
+
+## Avantages du tier Business
+
+| Perk | Effet |
+| --- | --- |
+| `business_until` | Statut Business actif |
+| `featured_until` | Profil mis en avant dans la découverte |
+| `top_explorer_until` | En tête de `/discover` |
+| `analytics_until` | Dashboard avancé avec funnels |
+| `scheduled_posts_until` | Publications programmées |
+| `storage_until` | Stockage média étendu |
+| `early_access_until` | Nouvelles fonctionnalités en avant-première |
+
+## Fonctionnalités exclusives
+
+<CardGroup cols={2}>
+  <Card title="Sponsored posts" icon="star">
+    Champ `is_sponsored: true` sur vos posts, badge visible.
+  </Card>
+
+  <Card title="Domain email" icon="at-sign">
+    Emails de communauté personnalisés.
+  </Card>
+
+  <Card title="Priorité support" icon="headphones">
+    Tickets escaladés automatiquement, réponse en moins de 2 heures.
+  </Card>
+
+  <Card title="Affiliations organisation" icon="users">
+    Attribuez le badge certifié à vos employés.
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Certification par affiliation.** Une organisation Business peut attribuer le badge « certifié par affiliation » à ses membres, listé dans `certified_affiliation_sources`.
+</Tip>

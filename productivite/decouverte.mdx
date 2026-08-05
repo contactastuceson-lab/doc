@@ -1,0 +1,43 @@
+---
+title: "La découverte"
+description: "Explorer profils suggestions et sample profiles"
+icon: "compass"
+---
+
+<CardGroup cols={2}>
+  <Card title="Profils recommandés" color="#38aadc" icon="users">
+    Basés sur vos intérêts (`interests`) et vos abonnements existants.
+  </Card>
+
+  <Card title="Sample profiles" color="#a78bfa" icon="sparkles">
+    Profils démo pour explorer eza avant même de suivre quelqu'un.
+  </Card>
+
+  <Card title="Certifiés en avant" color="#1dd8b4" icon="badge-check">
+    Les utilisateurs certifiés apparaissent en priorité.
+  </Card>
+
+  <Card title="Business épinglés" color="#f59e0b" icon="star">
+    Perk `top_explorer_until` : mise en avant dans la découverte.
+  </Card>
+</CardGroup>
+
+## Route publique
+
+`/discover` — accessible sans compte. Idem pour parcourir avant de s'inscrire.
+
+## Algorithme de suggestion
+
+## Entité `SampleProfile`
+
+Profils factices gérés par l'admin pour peupler l'expérience initiale.
+
+| Champ | Description |
+| --- | --- |
+| `username` | Handle du profil |
+| `display_name` | Nom d'affichage |
+| `bio`, `avatar_url` | Métadonnées visuelles |
+| `perks` | Simulation d'abonnement |
+| `is_sample` | Toujours `true` |
+
+Fonctions : `getSampleProfiles`, `seedSampleProfiles`.

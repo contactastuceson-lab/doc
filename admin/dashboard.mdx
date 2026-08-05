@@ -1,0 +1,80 @@
+---
+title: "Dashboard admin"
+description: "Vue d'ensemble : revenus, membres, RDV, signalements"
+icon: "layout-dashboard"
+---
+
+<CardGroup cols={4}>
+  <Card title="Revenus" color="#22c55e" icon="trending-up">
+  </Card>
+
+  <Card title="Devis totaux" color="#38aadc" icon="file-text">
+  </Card>
+
+  <Card title="Membres" color="#a78bfa" icon="users">
+  </Card>
+
+  <Card title="RDV planifiés" color="#1dd8b4" icon="calendar">
+  </Card>
+
+  <Card title="Taux conversion" color="#f59e0b" icon="percent">
+  </Card>
+
+  <Card title="Messages non lus" color="#38aadc" icon="mail">
+  </Card>
+
+  <Card title="Signalements" color="#ef4444" icon="flag">
+  </Card>
+
+  <Card title="Devis acceptés" color="#22c55e" icon="check-circle">
+  </Card>
+</CardGroup>
+
+## Rôles autorisés
+
+- `owner`
+- `pdg_adjoint`
+- `admin`
+- `conseil_admin`
+- `directeur`
+- `responsable`
+
+Contrôle d'accès via `isTopManagement()` et `getRoleAccess()` dans `lib/roles.js`.
+
+## Export CSV des devis
+
+Export en un clic : Client, Email, Service, Date, Statut, Prix estimé, Prix final, Créé le.
+
+## Graphiques Recharts
+
+<CardGroup cols={2}>
+  <Card title="BarChart activité" icon="bar-chart-3">
+    Volumes devis, revenus, membres sur période.
+  </Card>
+
+  <Card title="PieChart répartition" icon="pie-chart">
+    Par type de service, statut devis, tier utilisateur.
+  </Card>
+</CardGroup>
+
+## Sections du panneau admin
+
+<CardGroup cols={3}>
+  <Card title="Utilisateurs" icon="users" href="/admin/utilisateurs">
+  </Card>
+
+  <Card title="Governance" icon="crown" href="/admin/governance">
+  </Card>
+
+  <Card title="Certifications" icon="badge-check" href="/admin/certifications">
+  </Card>
+
+  <Card title="Audit logs" icon="activity" href="/admin/audit">
+  </Card>
+
+  <Card title="Automatisations" icon="bot" href="/admin/automations">
+  </Card>
+
+  <Card title="Blog & pages" icon="file-edit" href="/admin/blog">
+  </Card>
+</CardGroup>

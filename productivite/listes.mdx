@@ -1,0 +1,40 @@
+---
+title: "Listes personnalisées"
+description: "Créer des fils thématiques à partir de comptes suivis"
+icon: "list"
+---
+
+<CardGroup cols={2}>
+  <Card title="Fils thématiques" color="#38aadc" icon="list">
+    Créez une liste "Actualités tech", "Amis proches", "Concurrents".
+  </Card>
+
+  <Card title="Publiques ou privées" color="#a78bfa" icon="globe">
+    Partagez une liste ou gardez-la pour vous.
+  </Card>
+
+  <Card title="Illimitées" color="#1dd8b4" icon="infinity">
+    Autant de listes que vous voulez, autant de membres par liste.
+  </Card>
+
+  <Card title="Fil filtré" color="#f59e0b" icon="filter">
+    Chaque liste affiche uniquement les posts de ses membres.
+  </Card>
+</CardGroup>
+
+## L'entité `UserList`
+
+| Champ | Description |
+| --- | --- |
+| `owner_id` | Propriétaire de la liste |
+| `name` | Nom de la liste |
+| `description` | Description libre |
+| `member_ids` | Tableau des IDs utilisateurs |
+| `is_public` | Visible par tous ou privée |
+| `cover_url` | Image optionnelle |
+
+## Créer une liste
+
+<Tip>
+  **Pratique pour se concentrer.** Créez une liste "Priorités" avec vos 20 comptes favoris. Vous évitez le bruit du fil principal.
+</Tip>

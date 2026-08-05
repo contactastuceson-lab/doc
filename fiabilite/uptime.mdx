@@ -1,0 +1,45 @@
+---
+title: "Uptime & performances"
+description: "Surveillance externe via BetterStack"
+icon: "gauge"
+---
+
+<CardGroup cols={3}>
+  <Card title="Uptime 99.9%+" color="#22c55e" icon="trending-up">
+    Objectif SLA pour tous les services critiques.
+  </Card>
+
+  <Card title="Monitoring externe" color="#38aadc" icon="eye">
+    BetterStack vérifie chaque endpoint toutes les 30 secondes.
+  </Card>
+
+  <Card title="Latence multi-région" color="#a78bfa" icon="globe">
+    Mesures depuis EU, US, APAC.
+  </Card>
+</CardGroup>
+
+## Route publique
+
+`/uptime` — accessible sans compte, embed BetterStack.
+
+## Widget intégré
+
+Le widget BetterStack `data-id="243993"` affiche en direct :
+
+- Statut global du service
+- Uptime 24h / 7j / 30j / 90j
+- Historique des incidents
+- Temps de réponse moyen
+
+## Checks effectués
+
+| Type | Fréquence | Alerte |
+| --- | --- | --- |
+| HTTP ping | 30 s | \> 3 échecs consécutifs |
+| SSL certificate | 24 h | Expire dans \< 14 jours |
+| DNS resolution | 5 min | Échec résolution |
+| Keyword check | 1 min | Mot-clé absent de la réponse |
+
+<Tip>
+  **Post-mortem publics.** Chaque incident majeur donne lieu à un post-mortem public détaillant : chronologie, cause racine, impact, actions correctives.
+</Tip>

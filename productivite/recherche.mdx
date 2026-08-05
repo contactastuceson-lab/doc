@@ -1,0 +1,39 @@
+---
+title: "La recherche"
+description: "Retrouver un profil, un post ou un hashtag"
+icon: "search"
+---
+
+<CardGroup cols={3}>
+  <Card title="Profils" color="#38aadc" icon="user">
+    Cherche dans `username`, `display_name`, `full_name`.
+  </Card>
+
+  <Card title="Publications" color="#a78bfa" icon="file-text">
+    Cherche dans le contenu, l'auteur, les hashtags.
+  </Card>
+
+  <Card title="Hashtags" color="#1dd8b4" icon="hashtag">
+    Tendances en direct, tri par fréquence.
+  </Card>
+</CardGroup>
+
+## Comment ça fonctionne
+
+La recherche est **instantanée côté client** pour les profils et hashtags, et parcourt les 100 derniers posts pour le contenu.
+
+## Recherche par tag
+
+URL directe : `/?tag=monTag`
+
+<Note>
+  **Sample profiles.** La recherche inclut les profils démo (`SampleProfile`) marqués `is_sample: true`. Utile pour explorer eza avant même de suivre quelqu'un.
+</Note>
+
+## Fonctions backend impliquées
+
+| Fonction | Rôle |
+| --- | --- |
+| `getPublicUsers` | Récupère tous les profils publics |
+| `getSampleProfiles` | Profils démo pour la découverte |
+| `extractHashtags` | Extraction des tags depuis le contenu |

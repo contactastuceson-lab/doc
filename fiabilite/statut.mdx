@@ -1,0 +1,58 @@
+---
+title: "Statut des services"
+description: "État en temps réel de tous les modules eza"
+icon: "activity"
+---
+
+<CardGroup cols={2}>
+  <Card title="Opérationnel" color="#22c55e" icon="check-circle">
+    Service fonctionnant normalement.
+  </Card>
+
+  <Card title="Dégradé" color="#f59e0b" icon="zap">
+    Ralentissements ou incident partiel.
+  </Card>
+
+  <Card title="Maintenance" color="#38aadc" icon="wrench">
+    Intervention planifiée en cours.
+  </Card>
+
+  <Card title="Indisponible" color="#ef4444" icon="do-not-enter">
+    Service inaccessible, incident critique.
+  </Card>
+</CardGroup>
+
+## Route publique
+
+`/status` — accessible sans compte, transparence totale.
+
+## Modules surveillés
+
+| Module | Description |
+| --- | --- |
+| Messagerie | Messages privés et conversations |
+| Portfolio | Galerie de projets |
+| Blog | Articles et actualités |
+| Certification | Système de certification |
+| Donations | Plateforme de dons |
+| Planning | Calendrier et rendez-vous |
+| Devis | Système de demande de devis |
+| Discover | Répertoire social |
+
+## L'entité `ModuleStatus`
+
+| Champ | Description |
+| --- | --- |
+| `name` | Clé du module |
+| `status` | `operational`, `degraded`, `maintenance`, `outage` |
+| `message` | Message affiché |
+| `updated_at` | Dernière maj |
+| `incident_started_at` | Début incident |
+
+## Incidents passés
+
+Un historique complet des incidents est archivé (durée, cause, résolution, post-mortem).
+
+<Note>
+  **Communication proactive.** Les incidents majeurs déclenchent un banner sur toutes les pages via `banner` dans docs.json \+ notifications utilisateurs concernés.
+</Note>

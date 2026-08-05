@@ -89,6 +89,69 @@
           "guides/notifications",
           "guides/aide"
         ]
+      },
+      {
+        "group": "Productivité & organisation",
+        "icon": "bookmark",
+        "pages": [
+          "productivite/signets",
+          "productivite/listes",
+          "productivite/recherche",
+          "productivite/decouverte",
+          "productivite/panier",
+          "productivite/dashboard"
+        ]
+      },
+      {
+        "group": "Business & pro",
+        "icon": "briefcase",
+        "pages": [
+          "business/espace-business"
+        ]
+      },
+      {
+        "group": "Services extras",
+        "icon": "sparkles",
+        "pages": [
+          "extras/wifi-portal",
+          "extras/qr-generator",
+          "extras/ecosysteme"
+        ]
+      },
+      {
+        "group": "Fiabilité & légal",
+        "icon": "shield",
+        "pages": [
+          "fiabilite/statut",
+          "fiabilite/uptime",
+          "fiabilite/maintenance",
+          "fiabilite/rgpd",
+          "fiabilite/conditions"
+        ]
+      },
+      {
+        "group": "Administration",
+        "icon": "crown",
+        "pages": [
+          "admin/dashboard",
+          "admin/utilisateurs",
+          "admin/governance",
+          "admin/audit-logs",
+          "admin/automations",
+          "admin/ia-pdg",
+          "admin/moderation",
+          "admin/broadcast",
+          "admin/scan-tickets"
+        ]
+      },
+      {
+        "group": "Référence technique",
+        "icon": "code",
+        "pages": [
+          "reference/entites",
+          "reference/fonctions",
+          "reference/roles"
+        ]
       }
     ]
   },

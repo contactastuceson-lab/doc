@@ -1,0 +1,58 @@
+---
+title: "RGPD & vie privée"
+description: "Vos droits : accès, portabilité, effacement"
+icon: "shield-check"
+---
+
+<CardGroup cols={2}>
+  <Card title="Droit d'accès" color="#38aadc" icon="eye">
+    Consultez toutes vos données à tout moment.
+  </Card>
+
+  <Card title="Droit de portabilité" color="#a78bfa" icon="download">
+    Exportez toutes vos données en JSON via `exportMyData`.
+  </Card>
+
+  <Card title="Droit d'effacement" color="#ef4444" icon="trash-2">
+    Supprimez définitivement votre compte via `AccountDeletionPage`.
+  </Card>
+
+  <Card title="Consentement cookies" color="#f59e0b" icon="cookie">
+    Maîtrise granulaire via la page `/legal/cookies`.
+  </Card>
+</CardGroup>
+
+## Vos droits détaillés
+
+### Accès
+
+Depuis votre profil, vous voyez : posts, messages envoyés, transactions crédits, badges, connexions actives.
+
+### Portabilité
+
+Fonction `exportMyData` : archive ZIP contenant toutes vos données en JSON structuré.
+
+### Effacement
+
+## Fonctions RGPD backend
+
+| Fonction | Rôle |
+| --- | --- |
+| `exportMyData` | Archive JSON de toutes vos données |
+| `hardDeleteUser` | Suppression définitive |
+| `deleteMyProfile` | Suppression profil (avec période grâce) |
+| `expireUsernameGrace` | Recyclage username 90j après suppression |
+
+## L'entité `DeletedUsername`
+
+Garde trace des usernames libérés pour éviter le squat immédiat.
+
+| Champ | Description |
+| --- | --- |
+| `username` | Handle libéré |
+| `deleted_at` | Date libération |
+| `available_after` | Réutilisable à partir de (\+ 90j) |
+
+<Note>
+  **Base légale.** Le traitement de vos données repose sur : exécution du contrat (compte), consentement (marketing), intérêt légitime (sécurité).
+</Note>

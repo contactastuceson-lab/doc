@@ -1,0 +1,63 @@
+---
+title: "Audit logs"
+description: "Journalisation complète de toutes les actions sensibles"
+icon: "activity"
+---
+
+<CardGroup cols={2}>
+  <Card title="Trace immuable" color="#ef4444" icon="lock">
+    Aucune écriture, aucune suppression : append-only.
+  </Card>
+
+  <Card title="Filtres puissants" color="#38aadc" icon="filter">
+    Par action, cible, acteur, plage de dates.
+  </Card>
+
+  <Card title="Export CSV" color="#a78bfa" icon="download">
+    Pour analyse externe, conformité, audits.
+  </Card>
+
+  <Card title="Accès restreint" color="#f59e0b" icon="shield">
+    Réservé aux rôles top management (`isTopManagement`).
+  </Card>
+</CardGroup>
+
+## L'entité `AuditLog`
+
+| Champ | Description |
+| --- | --- |
+| `actor_id` | Utilisateur ayant fait l'action |
+| `actor_email` | Email au moment de l'action |
+| `action` | `create`, `update`, `delete`, `read`, `login`, `logout` |
+| `entity_type` | Type d'entité ciblée |
+| `entity_id` | ID de la cible |
+| `changes` | Objet `{field: {old, new}}` |
+| `ip_address` | IP de l'acteur |
+| `user_agent` | Navigateur / device |
+| `created_at` | Timestamp exact |
+
+## Actions journalisées
+
+<CardGroup cols={3}>
+  <Card title="Création" color="#22c55e" icon="plus">
+  </Card>
+
+  <Card title="Modification" color="#38aadc" icon="pen-square">
+  </Card>
+
+  <Card title="Suppression" color="#ef4444" icon="trash-2">
+  </Card>
+
+  <Card title="Lecture sensible" color="#94a3b8" icon="eye">
+  </Card>
+
+  <Card title="Connexion" color="#a78bfa" icon="log-in">
+  </Card>
+
+  <Card title="Déconnexion" color="#f59e0b" icon="log-out">
+  </Card>
+</CardGroup>
+
+<Note>
+  **Conservation 5 ans.** Les logs d'audit sont conservés 5 ans pour conformité, puis archivés en cold storage.
+</Note>

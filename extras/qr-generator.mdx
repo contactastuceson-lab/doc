@@ -1,0 +1,42 @@
+---
+title: "Générateur QR code (ADMIN)"
+description: "Créez des QR codes personnalisés pour tout usage"
+icon: "qr-code"
+---
+
+<CardGroup cols={2}>
+  <Card title="6 presets" color="#38aadc" icon="layers">
+    URL, texte, email, téléphone, SMS, Wi-Fi.
+  </Card>
+
+  <Card title="Correction d'erreur" color="#a78bfa" icon="shield">
+    4 niveaux : L, M, Q, H (jusqu'à 30% de résilience).
+  </Card>
+
+  <Card title="Design personnalisé" color="#1dd8b4" icon="palette">
+    Couleur QR, fond, logo au centre, style.
+  </Card>
+
+  <Card title="Export" color="#f59e0b" icon="download">
+    PNG, SVG, copie presse-papiers.
+  </Card>
+</CardGroup>
+
+## Presets disponibles
+
+| Preset | Format | Exemple |
+| --- | --- | --- |
+| URL / Lien | `https://...` | `https://eza.group` |
+| Texte libre | Tout texte | `Bonjour!` |
+| Email | `mailto:...` | `contact@eza.group` |
+| Téléphone | `tel:...` | `+33612345678` |
+| SMS | `sms:...` | `+33612345678` |
+| Wi-Fi | `WIFI:T:WPA;S:...;P:...;;` | Auto-connexion Wi-Fi |
+
+## Validation par preset
+
+Chaque preset a un validateur regex qui vérifie le format avant génération.
+
+<Tip>
+  **Wi-Fi QR code.** Formatez : `WIFI:T:WPA;S:MonReseau;P:MonMotDePasse;;`. Scan avec l'appareil photo iOS/Android → connexion automatique.
+</Tip>

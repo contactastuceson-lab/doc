@@ -1,0 +1,58 @@
+---
+title: "Les 12 rôles utilisateur"
+description: "Hiérarchie complète et permissions"
+icon: "crown"
+---
+
+<CardGroup cols={2}>
+  <Card title="Direction (6)" color="#f59e0b" icon="crown">
+    owner, pdg\_adjoint, conseil\_admin, admin, directeur, responsable.
+  </Card>
+
+  <Card title="Opérationnel (6)" color="#38aadc" icon="users">
+    event\_manager, pilote, collaborateur\_interne, collaborateur, vip, user.
+  </Card>
+</CardGroup>
+
+## Direction
+
+| Rôle | Description | Accès admin |
+| --- | --- | --- |
+| `owner` | Fondateur, pouvoirs illimités | Total |
+| `pdg_adjoint` | PDG adjoint | Total sauf sur owner |
+| `conseil_admin` | Conseil d'administration | Gouvernance, gros dossiers |
+| `admin` | Administration générale | Panneaux admin |
+| `directeur` | Direction opérationnelle | Panneaux métier |
+| `responsable` | Responsable métier | Zone déléguée |
+
+## Opérationnel
+
+| Rôle | Description | Spécificité |
+| --- | --- | --- |
+| `event_manager` | Gestion événements | Crée/scan events |
+| `pilote` | Pilote drone | Missions drone, `RoofCheckup` |
+| `collaborateur_interne` | Employé interne | Accès outils internes |
+| `collaborateur` | Collaborateur externe | Contributeur limité |
+| `vip` | Compte VIP | Badge VIP, priorité support |
+| `user` | Utilisateur standard | Compte de base |
+
+## Helpers `lib/roles.js`
+
+| Fonction | Rôle |
+| --- | --- |
+| `isTopManagement(user)` | true si owner/pdg\_adjoint/conseil\_admin |
+| `isAdmin(user)` | true pour tous les direction |
+| `isEmployee(user)` | true pour direction \+ opérationnel interne |
+| `getRoleAccess(role)` | Retourne l'objet permissions |
+| `PDG_EMAILS` | Liste emails owner |
+| `PDG_ADJOINT_EMAILS` | Liste emails pdg\_adjoint |
+
+## Échelle des permissions
+
+<CardGroup cols={2}>
+     
+</CardGroup>
+
+<Warning>
+  **Owner immuable.** Ce rôle ne peut pas être attribué par l'UI. Modification via migration DB uniquement.
+</Warning>

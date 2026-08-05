@@ -1,0 +1,144 @@
+---
+title: "Les 126 fonctions backend"
+description: "Toutes les fonctions serveur invoquables"
+icon: "webhook"
+---
+
+<CardGroup cols={2}>
+  <Card title="Invocation" color="#38aadc" icon="zap">
+    `base44.functions.invoke('nomFonction', args)`
+  </Card>
+
+  <Card title="Sécurité" color="#a78bfa" icon="shield">
+    Chaque fonction vérifie le rôle/perk de l'appelant.
+  </Card>
+</CardGroup>
+
+## Authentification & compte
+
+| Fonction | Rôle |
+| --- | --- |
+| `setupTOTP` | Configuration 2FA |
+| `verifyTOTP` | Vérification code |
+| `generateBackupCodes` | Génére 10 codes secours |
+| `deleteMyProfile` | Suppression profil (grâce) |
+| `hardDeleteUser` | Suppression définitive |
+| `exportMyData` | Export RGPD |
+| `expireUsernameGrace` | Recyclage username |
+| `sendPasswordResetEmail` | Reset mdp |
+
+## Posts & feed
+
+| Fonction | Rôle |
+| --- | --- |
+| `publishScheduledPosts` | Publie les programmés |
+| `expireStories` | Supprime stories \> 24h |
+| `computeTrendingHashtags` | Cache tendances |
+| `refineMessageWithAI` | Réécriture IA |
+| `moderateReportedContent` | Modération IA |
+| `runModerationSweep` | Scan préventif |
+
+## Événements
+
+| Fonction | Rôle |
+| --- | --- |
+| `registerForEvent` | Inscription event |
+| `unregisterFromEvent` | Désinscription |
+| `validateEventTicket` | Scan check-in |
+| `manualCheckIn` | Check-in manuel |
+| `getEventCheckinStats` | Stats live |
+| `notifyEventReminders` | Rappels J-1, H-1 |
+| `refundEventTicket` | Remboursement |
+
+## Crédits & économie
+
+| Fonction | Rôle |
+| --- | --- |
+| `awardDailyLogin` | Bonus connexion quotidienne |
+| `processCreditsMonthlyReset` | Reset crédits mensuels |
+| `transferCredits` | Transfert entre users |
+| `purchaseReward` | Achat récompense |
+| `checkoutCart` | Validation panier |
+| `recoverAbandonedCarts` | Rappel paniers abandonnés |
+
+## Parrainage
+
+| Fonction | Rôle |
+| --- | --- |
+| `generateReferralCode` | Crée code |
+| `redeemReferralCode` | Utilisation code |
+| `awardReferralBonuses` | Bonus parrain/filleul |
+
+## Ads business
+
+| Fonction | Rôle |
+| --- | --- |
+| `manageBusinessAdCampaign` | CRUD campagne |
+| `processDailyAdBudgets` | Rollup quotidien |
+| `alertLowAdBudgets` | Alertes budget bas |
+| `serveAd` | Serving publicité |
+
+## Certifications
+
+| Fonction | Rôle |
+| --- | --- |
+| `submitCertificationRequest` | Nouvelle demande |
+| `approveCertification` | Validation |
+| `refundCertification` | Remboursement si refus |
+| `attributeAffiliationBadge` | Badge affiliation org |
+
+## Support
+
+| Fonction | Rôle |
+| --- | --- |
+| `openSupportTicket` | Nouveau ticket |
+| `escalateOldTickets` | Escalade tickets vieillis |
+| `assignSupportTicket` | Attribution agent |
+| `closeSupportTicket` | Clôture |
+
+## Notifications & emails
+
+| Fonction | Rôle |
+| --- | --- |
+| `sendDigest` | Digest quotidien |
+| `sendBulkEmail` | Emailing segmenté |
+| `sendBulkPush` | Push segmenté |
+| `sendQuoteConfirmation` | Confirmation devis |
+| `sendUserAdminAction` | Notif sanction |
+
+## Planning & business
+
+| Fonction | Rôle |
+| --- | --- |
+| `syncAppointmentToOutlook` | Sync Outlook |
+| `deleteOutlookAppointment` | Suppression sync |
+| `blockDayOnQuoteAccepted` | Blocage jour |
+| `generateQuotePDF` | PDF devis |
+
+## Blog & SEO
+
+| Fonction | Rôle |
+| --- | --- |
+| `blogPreview` | Preview brouillon |
+| `publishScheduledBlogPosts` | Publie programmés |
+| `generateOGImage` | OG image auto |
+
+## Admin
+
+| Fonction | Rôle |
+| --- | --- |
+| `adminGetUsers` | Liste avec filtres |
+| `adminUpdateUser` | Modif user |
+| `adminSetUserRole` | Changement rôle |
+| `adminResetUserProfile` | Réinit profil |
+| `adminBanUser` | Ban |
+| `adminSuspendUser` | Suspension |
+| `adminExpireUsername` | Libére username |
+| `adminAssignBadge` | Badge manuel |
+| `getPublicUsers` | Public users |
+| `getSampleProfiles` | Profils démo |
+| `seedSampleProfiles` | Génère profils démo |
+
+<Note>
+  **126 fonctions au total.** Cette liste couvre les principales. La liste complète est disponible dans le repo `base44/functions/`.
+</Note>

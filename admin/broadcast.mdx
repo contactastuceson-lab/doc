@@ -1,0 +1,71 @@
+---
+title: "Broadcast & annonces"
+description: "Communiquer avec la communauté"
+icon: "megaphone"
+---
+
+<CardGroup cols={2}>
+  <Card title="Annonces globales" color="#f59e0b" icon="bell">
+    Banner top de site, dismissible ou obligatoire.
+  </Card>
+
+  <Card title="Emailing en masse" color="#38aadc" icon="mail">
+    Segmentation par tier, rôle, activité.
+  </Card>
+
+  <Card title="Notifications push" color="#a78bfa" icon="smartphone">
+    Vers tous ou vers un segment ciblé.
+  </Card>
+
+  <Card title="Templates" color="#1dd8b4" icon="file-text">
+    Modèles réutilisables : maintenance, nouvelle feature, event.
+  </Card>
+</CardGroup>
+
+## L'entité `Announcement`
+
+| Champ | Description |
+| --- | --- |
+| `title` | Titre de l'annonce |
+| `content` | Corps riche (MDX) |
+| `type` | `info`, `warning`, `critical`, `feature` |
+| `audience` | `all`, `certified`, `business`, `tier:X`, `role:X` |
+| `starts_at`, `ends_at` | Fenêtre d'affichage |
+| `dismissible` | Utilisateur peut fermer |
+| `channels` | `[banner, email, push, notification]` |
+| `stats` | Vues, clics, fermées |
+
+## Fonctions backend
+
+| Fonction | Rôle |
+| --- | --- |
+| `sendBulkEmail` | Emailing segmenté |
+| `sendBulkPush` | Push notifications |
+| `publishAnnouncement` | Activation banner |
+| `scheduleAnnouncement` | Programmation |
+
+## Segments prédéfinis
+
+<CardGroup cols={3}>
+  <Card title="Tous" icon="users">
+  </Card>
+
+  <Card title="Certifiés" icon="badge-check">
+  </Card>
+
+  <Card title="Business" icon="briefcase">
+  </Card>
+
+  <Card title="Pro" icon="gem">
+  </Card>
+
+  <Card title="Actifs 30j" icon="zap">
+  </Card>
+
+  <Card title="Nouveaux 7j" icon="sparkles">
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Mesure d'impact.** Chaque annonce a des stats : vues, clics, dismissed. Utile pour comparer types de messages.
+</Tip>

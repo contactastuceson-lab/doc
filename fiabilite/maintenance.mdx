@@ -1,0 +1,46 @@
+---
+title: "Mode maintenance"
+description: "Que se passe-t-il en maintenance"
+icon: "wrench"
+---
+
+<CardGroup cols={2}>
+  <Card title="Bandeau global" color="#f59e0b" icon="megaphone">
+    Message visible sur toutes les pages, paramétrable par l'admin.
+  </Card>
+
+  <Card title="Mode « site offline »" color="#ef4444" icon="power">
+    Fermeture complète : page dédiée affichée, seul l'admin accède.
+  </Card>
+
+  <Card title="Feature-flags" color="#a78bfa" icon="toggle-left">
+    Désactiver un module précis sans couper le site (ex: `page_flash_enabled`).
+  </Card>
+
+  <Card title="Notif utilisateurs" color="#38aadc" icon="bell">
+    Envoi push \+ email 24h avant maintenance planifiée.
+  </Card>
+</CardGroup>
+
+## Routes concernées
+
+- `/maintenance` : page dédiée affichée en mode maintenance
+- `/offline` : mode site offline complet
+- `/banned` : page pour comptes banns
+
+## Composants React associés
+
+| Composant | Rôle |
+| --- | --- |
+| `MaintenanceGuard` | Wrapper root, redirige si mode actif |
+| `FeatureDisabled` | Composant placé sur chaque page conditionnelle |
+| `usePageEnabled` | Hook vérifiant le feature-flag correspondant |
+| `MaintenanceBanner` | Bandeau global si simple annonce |
+
+## Panneau admin
+
+Dans `/admin/maintenance`, l'admin peut :
+
+<Warning>
+  **Zones jamais bloquées.** `/login`, `/status`, `/uptime`, `/maintenance` restent accessibles en tout temps, même en mode offline.
+</Warning>

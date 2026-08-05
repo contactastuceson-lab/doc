@@ -1,0 +1,62 @@
+---
+title: "Gestion des utilisateurs"
+description: "Recherche, filtres, rôles, statuts, actions en masse"
+icon: "users-cog"
+---
+
+<CardGroup cols={2}>
+  <Card title="Recherche puissante" color="#38aadc" icon="search">
+    Par email, username, rôle, statut, tier, date d'inscription.
+  </Card>
+
+  <Card title="Changement de rôle" color="#a78bfa" icon="crown">
+    Assign parmi 12 rôles via `adminUpdateUser`.
+  </Card>
+
+  <Card title="Suspension / bannissement" color="#ef4444" icon="ban">
+    4 statuts : active, suspended, banned, pending\_verification.
+  </Card>
+
+  <Card title="Attribution de perks" color="#f59e0b" icon="gift">
+    Donner un tier, prolonger une expiration, forcer un badge.
+  </Card>
+</CardGroup>
+
+## Fonctions admin utilisateurs
+
+| Fonction | Rôle |
+| --- | --- |
+| `adminGetUsers` | Liste avec filtres |
+| `adminGetUsersByRole` | Filtre par rôle précis |
+| `adminUpdateUser` | Modif rôle, statut, perks, verified |
+| `adminSetUserRole` | Changement de rôle atomique |
+| `adminResetUserProfile` | Réinitialisation profil |
+| `adminExpireUsername` | Libérer un username |
+| `adminAssignBadge` | Attribuer un badge manuel |
+| `sendUserAdminAction` | Notif email de la sanction |
+
+## Filtres disponibles
+
+<CardGroup cols={3}>
+  <Card title="Par rôle" icon="crown">
+  </Card>
+
+  <Card title="Par statut" icon="user-check">
+  </Card>
+
+  <Card title="Par tier" icon="gem">
+  </Card>
+
+  <Card title="Certifiés" icon="badge-check">
+  </Card>
+
+  <Card title="Banés" icon="user-x">
+  </Card>
+
+  <Card title="Suspendus" icon="pause">
+  </Card>
+</CardGroup>
+
+<Warning>
+  **Traces d'audit.** Chaque action admin sur un utilisateur crée une entrée `AuditLog` (voir page Audit logs).
+</Warning>

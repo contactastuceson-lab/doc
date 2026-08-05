@@ -1,0 +1,138 @@
+---
+title: "Les 63 entités"
+description: "Liste complète des modèles de données"
+icon: "database"
+---
+
+<CardGroup cols={4}>
+  <Card title="Social" icon="users">
+  </Card>
+
+  <Card title="Économie" icon="coins">
+  </Card>
+
+  <Card title="Business" icon="briefcase">
+  </Card>
+
+  <Card title="Admin" icon="crown">
+  </Card>
+</CardGroup>
+
+## Utilisateurs & auth
+
+| Entité | Rôle |
+| --- | --- |
+| `User` | Profil complet, 12 rôles, 4 statuts, perks |
+| `SampleProfile` | Profils démo pour la découverte |
+| `DeviceSession` | Sessions actives par appareil |
+| `DeletedUsername` | Handles libérés en grâce (90j) |
+| `TOTPSecret` | Secrets 2FA TOTP |
+| `BackupCode` | Codes de secours 2FA |
+
+## Contenu social
+
+| Entité | Rôle |
+| --- | --- |
+| `Post` | Posts, replies, reposts, polls |
+| `Comment` | Commentaires imbriqués |
+| `Like` | Likes sur posts/comments |
+| `Bookmark` | Signets utilisateur |
+| `Story` | Stories 24h |
+| `StoryView` | Qui a vu ma story |
+| `Repost` | Reposts (retweets) |
+| `Follow` | Relations d'abonnement |
+| `Block` | Utilisateurs bloqués |
+| `Mute` | Utilisateurs mutés |
+| `UserList` | Listes personnalisées |
+| `Hashtag` | Tendances (cache) |
+
+## Communautés & espaces
+
+| Entité | Rôle |
+| --- | --- |
+| `Community` | Communautés thématiques |
+| `CommunityMember` | Adhésion \+ rôle communauté |
+| `Space` | Espaces vocaux type Twitter Spaces |
+| `SpaceParticipant` | Participants en direct |
+| `Discussion` | Discussions du forum |
+| `DiscussionMessage` | Messages du forum |
+
+## Messagerie
+
+| Entité | Rôle |
+| --- | --- |
+| `Conversation` | 1-1 et groupes |
+| `Message` | Messages privés |
+| `NexusConversation` | Conversations avec l'IA Nexus |
+| `ConversationControl` | Anti-abus messagerie |
+
+## Économie
+
+| Entité | Rôle |
+| --- | --- |
+| `Wallet` | Portefeuille crédits |
+| `CreditTransaction` | Historique transactions |
+| `Reward` | Récompenses boutique |
+| `Cart` | Panier multi-items |
+| `Order` | Commandes validées |
+| `AdCampaign` | Campagnes publicitaires |
+| `AdSlot` | Emplacements pub |
+| `Referral` | Parrainages |
+| `Perk` | Avantages temporaires |
+
+## Contenu éditorial
+
+| Entité | Rôle |
+| --- | --- |
+| `Project` | Projets portfolio |
+| `BeforeAfterGallery` | Galeries avant/après |
+| `Review` | Avis clients |
+| `BlogPost` | Articles blog |
+| `Event` | Événements |
+| `EventRegistration` | Inscriptions \+ tickets |
+| `Documentation` | Pages doc intégrées |
+
+## Business
+
+| Entité | Rôle |
+| --- | --- |
+| `Quote` | Devis clients |
+| `Appointment` | Rendez-vous |
+| `BlockedDay` | Jours indisponibles |
+| `BusinessHours` | Horaires ouverture |
+| `RoofCheckup` | Inspection toiture IA |
+| `DroneMaintenanceLog` | Suivi drones |
+| `Partner` | Partenaires écosystème |
+
+## Certifications & confiance
+
+| Entité | Rôle |
+| --- | --- |
+| `CertificationRequest` | Demandes de certification |
+| `OrganizationAffiliation` | Affiliations pro |
+| `Badge` | Badges attribués |
+| `BadgeType` | Catalogue de badges |
+
+## Support & maintenance
+
+| Entité | Rôle |
+| --- | --- |
+| `SupportTicket` | Tickets support |
+| `SupportMessage` | Messages sur ticket |
+| `Notification` | Notifs système |
+| `Report` | Signalements |
+| `ModuleStatus` | État services |
+| `Incident` | Incidents historique |
+| `Announcement` | Annonces globales |
+
+## Admin & traçabilité
+
+| Entité | Rôle |
+| --- | --- |
+| `AuditLog` | Journal actions sensibles |
+| `AutomationLog` | Logs jobs cron |
+| `AdminTask` | Tâches admin |
+| `SiteConfig` | Configuration site |
+| `FeatureFlag` | Toggles fonctionnalités |
+| `EmailLog` | Historique emails |
+| `PushSubscription` | Abonnements push |

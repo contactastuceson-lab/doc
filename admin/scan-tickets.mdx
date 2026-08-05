@@ -1,0 +1,50 @@
+---
+title: "Scan tickets événements"
+description: "Check-in via QR code, anti-fraude"
+icon: "qr-code"
+---
+
+<CardGroup cols={2}>
+  <Card title="Scan QR temps réel" color="#38aadc" icon="scan-line">
+    Caméra du téléphone → validation instantanée.
+  </Card>
+
+  <Card title="Anti-fraude" color="#ef4444" icon="shield">
+    Un ticket ne peut être validé qu'une seule fois.
+  </Card>
+
+  <Card title="Saisie manuelle" color="#a78bfa" icon="keyboard">
+    Fallback si QR illisible : entrer le code `EZA-XXXXXXXX`.
+  </Card>
+
+  <Card title="Stats live" color="#1dd8b4" icon="line-chart">
+    Taux de check-in, no-show, pic d'affluence.
+  </Card>
+</CardGroup>
+
+## Rôles autorisés
+
+- `owner`, `pdg_adjoint`, `admin`, `event_manager`
+
+## Format des tickets
+
+`EZA-XXXXXXXX` (8 caractères aléatoires après le préfixe).
+
+Encodé en QR code sur la page d'inscription événement.
+
+## Cycle de check-in
+
+<Steps>
+</Steps>
+
+## Fonctions backend
+
+| Fonction | Rôle |
+| --- | --- |
+| `validateEventTicket` | Check \+ marquage `used_at` |
+| `getEventCheckinStats` | Stats temps réel |
+| `manualCheckIn` | Fallback saisie manuelle |
+
+<Warning>
+  **Doublons impossibles.** Le champ `EventRegistration.used_at` est renseigné à la première validation. Toute nouvelle tentative est rejetée.
+</Warning>
