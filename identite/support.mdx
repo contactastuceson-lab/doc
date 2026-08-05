@@ -5,64 +5,59 @@ description: "Une IA qui répond et qui agit"
 icon: "robot"
 ---
 
-Le support d'eza combine cette documentation, la communauté (forum et communautés), et un support intelligent piloté par Nexus, l'IA d'eza qui peut agir sur votre compte.
+<CardGroup cols={2}>
+  <Card title="Agent, pas chatbot" color="#38aadc" icon="bot">
+    Nexus peut consulter et modifier votre compte pour vous aider.
+  </Card>
 
-## Par où commencer
+  <Card title="Escalade automatique" color="#f59e0b" icon="arrow-up">
+    Cas complexes transférés à un humain avec tout le contexte.
+  </Card>
 
-Avant d'ouvrir un ticket :
+  <Card title="Historique persistant" color="#a78bfa" icon="history">
+    Retrouvez toutes vos conversations Nexus à tout moment.
+  </Card>
 
-- **Documentation** : les guides pratiques couvrent l'essentiel.
-- **Forum** : posez votre question, elle a peut-être déjà été résolue.
-- **Communautés** : demandez à la communauté thématique.
-- **Support** : ouvrez un ticket pour un problème précis sur votre compte.
+  <Card title="Actions concrètes" color="#1dd8b4" icon="cog">
+    Remboursements, ré-attribution, corrections, débug.
+  </Card>
+</CardGroup>
+
+## Ce que Nexus peut faire
+
+<CardGroup cols={2}>
+  <Card title="Consulter" icon="search">
+    Solde de crédits, transactions, tickets, événements, publications.
+  </Card>
+
+  <Card title="Rembourser" icon="undo">
+    En crédits, si le motif est justifié.
+  </Card>
+
+  <Card title="Débloquer" icon="unlock">
+    Une conversation, un compte, un accès.
+  </Card>
+
+  <Card title="Corriger" icon="wrench">
+    Erreurs de saisie, doublons, données incohérentes.
+  </Card>
+</CardGroup>
 
 ## Ouvrir un ticket
 
 <Steps>
 </Steps>
 
-<Tip>
-  **Décrivez bien.** Plus votre description est précise, plus Nexus est efficace. Mentionnez l'élément concerné (événement, post, portefeuille) et ce que vous attendez.
-</Tip>
+## Critères d'escalade humaine
 
-## Ce que Nexus peut faire
-
-Nexus n'est pas un chatbot : c'est un agent qui lit votre compte, vérifie votre solde, vos inscriptions et vos posts avant de répondre, et qui peut exécuter des actions réelles.
-
-| Action | Détail |
+| Situation | Escalade |
 | --- | --- |
-| Inscriptions | Vous inscrire à un événement et débiter vos crédits. |
-| Annulations | Annuler une inscription et rendre les crédits payés. |
-| Crédits | Créditer un geste commercial ou rembourser un achat. |
-| Transferts | Déplacer des crédits entre vos portefeuilles. |
-| Dégel | Dégeler un portefeuille vérifié. |
-| Compteurs | Recalculer les likes/compteurs d'un post si besoin. |
-| Signalements | Ouvrir ou fermer un signalement. |
+| Litige entre deux comptes | Oui |
+| Suspicion de fraude | Oui |
+| Contentieux paiement | Oui |
+| Demande RGPD complexe | Oui |
+| Rétablissement d'un compte suspendu | Oui |
 
-## Quand Nexus transmet à un humain
-
-L'escalade est réservée aux cas critiques réels :
-
-- Sécurité : compte piraté, harcèlement.
-- Remboursement bancaire par carte (Stripe), pas les crédits Eza.
-- Suppression de compte (RGPD).
-- Litige ou fraude.
-- Bug bloquant confirmé.
-
-Un humain reprend le dossier sous 24-48h.
-
-<Info>
-  **Pas d'escalade par précaution.** Nexus ne transmet pas « au cas où ». Un problème vague reste en dépannage. L'escalade est réservée aux cas critiques.
-</Info>
-
-## Mes conversations de support
-
-- Tableau de bord de vos tickets (ouverts et résolus).
-- Conversation en direct avec Nexus (entité `NexusConversation`).
-- Étapes de recherche affichées en temps réel.
-- Cartes d'action pour les opérations sensibles (validation Oui/Non).
-- Historique complet conservé.
-
-## Signalements
-
-Vous pouvez signaler un contenu, un utilisateur ou un message via `ReportModal` (icône signaler). Chaque signalement crée une entité `Report` traitée par la modération.
+<Note>
+  **Entity `NexusConversation`.** Chaque échange avec Nexus est stocké avec le contexte, les actions réalisées, et les liens vers les tickets ou remboursements générés.
+</Note>

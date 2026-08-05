@@ -5,78 +5,133 @@ icon: "eye"
 sidebarTitle: "La plateforme"
 ---
 
-**eza** est une plateforme communautaire construite autour de plusieurs pôles réunis dans une seule application web progressive (PWA), installable sur iOS et Android depuis le même code.
+<CardGroup cols={2}>
+  <Card title="Une seule app" color="#38aadc" icon="layers">
+    Réseau social, forum, messagerie, portfolio, blog, événements, crédits. Tout au même endroit.
+  </Card>
 
-## Une plateforme, plusieurs pôles
+  <Card title="Une seule identité" color="#1dd8b4" icon="fingerprint">
+    Un compte, un @username, des badges, un solde de crédits qui vous suivent partout.
+  </Card>
 
-- **Réseau social** : fil d'actualité, publications (texte, médias, GIFs, sondages), likes, réponses, mentions, hashtags, suivi d'utilisateurs.
-- **Messagerie** : conversations 1-à-1 avec demandes de contact, modération, messages officiels.
-- **Forum** : discussions thématiques, réponses, likes, catégories, épinglage, annonces.
-- **Portfolio** : galerie de projets réalisés, comparaisons avant/après, avis clients, carte interactive.
-- **Blog** : articles d'actualité, conseils, techniques, catégories, temps de lecture.
-- **Certifications** : demande de certification (questionnaire \+ paiement Stripe), badges de vérification.
-- **Affiliations & Écosystème** : rattachement d'un utilisateur à une organisation, logos d'affiliation visibles publiquement.
-- **Business Space** : espace dédié aux organisations et comptes business.
-- **Donations** : soutien financier via Stripe.
-- **Notifications** : push web (VAPID), email, in-app.
+  <Card title="PWA installable" color="#a78bfa" icon="smartphone">
+    iOS et Android depuis le même code. Plein écran comme une vraie app native.
+  </Card>
 
-## Une seule application, un seul compte
+  <Card title="Temps réel" color="#f59e0b" icon="zap">
+    Messages, notifications, likes, tendances. Tout arrive en direct.
+  </Card>
+</CardGroup>
 
-Là où la plupart des communautés s'éparpillent entre plusieurs sites, eza réunit tout au même endroit. Vous créez un compte une fois et accédez à tout. Votre profil, vos badges, votre solde de crédits et vos affiliations vous suivent partout.
+## Les 12 pôles d'eza
 
-- Un seul compte pour tous les espaces.
-- Une seule identité : profil et badges partagés.
-- Un seul solde de crédits, utilisable partout.
-- Une app installable sur iPhone et Android depuis le même code.
+<CardGroup cols={3}>
+  <Card title="Réseau social" icon="users" href="/social/social">
+    Fil, posts, likes, réponses, hashtags, mentions.
+  </Card>
 
-<Tip>
-  **Tout est connecté.** Un créateur qui publie un post est aussi un membre de communauté, un certifié, un parrain et un acheteur de billets, sans jamais changer d'application.
-</Tip>
+  <Card title="Messagerie" icon="message-square" href="/social/messaging">
+    Conversations privées temps réel.
+  </Card>
+
+  <Card title="Forum" icon="messages-square" href="/social/forum">
+    Discussions et entraide.
+  </Card>
+
+  <Card title="Communautés" icon="users" href="/social/communities">
+    Groupes thématiques avec règles.
+  </Card>
+
+  <Card title="Spaces audio" icon="radio" href="/social/spaces">
+    Salons audio en direct.
+  </Card>
+
+  <Card title="Stories" icon="bell" href="/social/stories">
+    Contenus éphémères 24h.
+  </Card>
+
+  <Card title="Portfolio" icon="map" href="/plateforme/portfolio">
+    Vitrine projets, avant/après.
+  </Card>
+
+  <Card title="Blog" icon="file-text" href="/plateforme/blog">
+    Actualités et tutoriels.
+  </Card>
+
+  <Card title="Événements" icon="calendar" href="/plateforme/events">
+    Inscriptions et billetterie.
+  </Card>
+
+  <Card title="Crédits" icon="coins" href="/economie/economie-credits">
+    Monnaie interne d'eza.
+  </Card>
+
+  <Card title="Certifications" icon="award" href="/identite/certifications">
+    Badges de vérification.
+  </Card>
+
+  <Card title="Support Nexus" icon="life-buoy" href="/identite/support">
+    IA qui agit sur votre compte.
+  </Card>
+</CardGroup>
+
+## Pour qui ?
+
+<CardGroup cols={2}>
+  <Card title="Créateurs" color="#fb7185" icon="palette">
+    Publier, raconter, construire une audience. Portfolio \+ blog \+ fil social.
+  </Card>
+
+  <Card title="Clients" color="#38aadc" icon="search">
+    Découvrir des prestataires, lire des avis, demander des devis.
+  </Card>
+
+  <Card title="Communauté" color="#1dd8b4" icon="heart">
+    Forum, communautés et Spaces pour échanger sur ce qui vous passionne.
+  </Card>
+
+  <Card title="Organisations" color="#a78bfa" icon="building">
+    Affilier vos équipes, afficher votre logo, lancer des campagnes.
+  </Card>
+</CardGroup>
 
 ## Pages publiques
 
-Accessibles sans connexion :
+Accessibles sans compte :
 
 | Route | Contenu |
 | --- | --- |
 | `/` | Fil d'actualité \+ sidebars |
-| `/about` | À propos |
-| `/blog` | Liste des articles |
-| `/blog/:id` | Article complet |
-| `/discover` | Découverte d'utilisateurs et sujets |
-| `/portfolio` | Galerie de projets \+ avant/après |
-| `/forum` | Liste des discussions |
-| `/forum/:id` | Discussion \+ réponses |
-| `/enor` | Biographie Enor |
-| `/ecosysteme` | Écosystème et affiliations |
+| `/blog` | Articles publiés |
+| `/discover` | Découverte d'utilisateurs |
+| `/portfolio` | Galerie de projets |
+| `/forum` | Discussions du forum |
+| `/enor` | Biographie fondateur |
+| `/ecosysteme` | Écosystème EZA Group |
 | `/business` | Espace business |
-| `/post/:id` | Détail d'une publication |
-| `/@username` | Profil public d'un utilisateur |
+| `/@username` | Profil public |
 | `/donation` | Faire un don |
-| `/uptime` | Statut des services |
-
-## PWA installable
-
-eza est une application web progressive (PWA), installable sur votre téléphone.
-
-- Installable sur iPhone et Android, plein écran, comme une app native.
-- Design sombre par défaut (Dark Sky) \+ thème clair disponible.
-- Support offline partiel.
-- Notifications push web sur votre téléphone, même quand l'app est fermée.
-- Optimisée mobile : tactile, rapide, fluide (safe areas, momentum scroll).
 
 <Tip>
-  **Installez eza.** Depuis votre navigateur, menu « Ajouter à l'écran d'accueil ». Vous obtenez une icône sur votre téléphone et une app plein écran, sans passer par un store.
+  **Installez eza sur votre téléphone.** Depuis le navigateur → menu → « Ajouter à l'écran d'accueil ». Vous obtenez une icône et une app plein écran.
 </Tip>
 
-## Thèmes et préférences
+## Design system
 
-Vous personnalisez eza dans vos paramètres :
+<CardGroup cols={2}>
+  <Card title="Dark Sky (défaut)" icon="moon">
+    Palette bleu ciel profond, halos lumineux, glassmorphism.
+  </Card>
 
-- **Thème** : automatique, clair (light), ou sombre (dark, défaut).
-- **Langue** : français, anglais, espagnol, allemand.
-- **Mode compact** : réduit paddings et tailles pour plus de densité.
-- **Statut en ligne** : afficher ou masquer votre présence.
-- **Notifications** : 9 réglages fins, activables individuellement.
+  <Card title="Light" icon="sun">
+    Thème clair avec la même identité chromatique.
+  </Card>
 
-Vos préférences sont enregistrées et vous suivent sur tous vos appareils.
+  <Card title="Mode compact" icon="minimize-2">
+    Densité renforcée pour les power users.
+  </Card>
+
+  <Card title="4 langues" icon="languages">
+    FR, EN, ES, DE. Contexte i18n global.
+  </Card>
+</CardGroup>

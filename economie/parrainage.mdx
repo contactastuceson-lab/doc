@@ -5,45 +5,38 @@ icon: "user-plus"
 sidebarTitle: "Le parrainage"
 ---
 
-Le parrainage récompense l'apport de nouveaux membres. Vous partagez votre code (votre @username), vos invités rejoignent eza, et vous gagnez des crédits à chaque étape.
+<CardGroup cols={2}>
+  <Card title="Code unique" color="#38aadc" icon="link">
+    Votre lien personnel de parrainage à partager partout.
+  </Card>
 
-## Mon code de parrainage
+  <Card title="Jalons progressifs" color="#a78bfa" icon="stairs">
+    Récompenses à l'inscription, activation, certification.
+  </Card>
 
-Votre code de parrainage est votre @username. Vous le partagez librement.
+  <Card title="Bonus filleul" color="#1dd8b4" icon="gift">
+    Votre invité gagne aussi des crédits de bienvenue.
+  </Card>
+
+  <Card title="Suivi live" color="#f59e0b" icon="line-chart">
+    Voyez votre tableau de bord parrainages en temps réel.
+  </Card>
+</CardGroup>
+
+## Comment ça marche
 
 <Steps>
 </Steps>
 
-<Tip>
-  **Partagez largement.** Chaque inscription validée vous rapporte des crédits. Utilisez vos réseaux sociaux, vos messageries, ou votre communauté.
-</Tip>
-
 ## Les jalons
 
-Plus vous parrainez, plus vous débloquez des récompenses bonus.
-
-- Crédit initial à la première inscription d'un filleul.
-- Récompenses bonus à chaque jalon (5e, 10e, 25e, 50e filleul).
-- Les récompenses se cumulent : inscription \+ chaque jalon atteint.
-- Suivez votre progression vers le prochain jalon depuis la page Parrainage.
-
-## L'entité `Referral`
-
-Chaque parrainage crée une entité `Referral` :
-
-- Parrain (`referrer_id`).
-- Filleul (`referred_id`).
-- Statut (`pending`, `validated`, `revoked`).
-- Récompenses attribuées (`rewards`).
+| Jalon | Récompense |
+| --- | --- |
+| Inscription | Bonus initial pour vous deux |
+| Profil complété | Récompense supplémentaire |
+| Première publication | Bonus créateur |
+| Certification approuvée | Gros bonus |
 
 <Note>
-  **Suivez vos gains.** La page Parrainage affiche votre code, la liste de vos filleuls, vos gains cumulés et votre progression.
+  **Entity `Referral`.** Chaque parrainage est tracé : parrain, filleul, jalons franchis, crédits versés. Aucune ambiguïté.
 </Note>
-
-## Jouer loyalement
-
-Les tentatives de fraude (multi-comptes, robots d'inscription) sont détectées automatiquement.
-
-<Warning>
-  **Pas de triche.** Chaque parrainage est vérifié. La fraude (multi-comptes, bots) entraîne l'annulation des récompenses (`revoked`) et peut bloquer votre compte. Parrainez de vraies personnes.
-</Warning>

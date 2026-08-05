@@ -5,69 +5,84 @@ icon: "id-card"
 sidebarTitle: "Mon profil"
 ---
 
-Votre profil est votre identité publique sur eza. Il affiche vos publications, vos badges, vos affiliations et vos statistiques. La page personnelle `/profile` réunit tous vos paramètres.
+<CardGroup cols={2}>
+  <Card title="URL @username" color="#38aadc" icon="at-sign">
+    Votre profil est accessible à `/@votrepseudo`.
+  </Card>
 
-## Profil personnel (`/profile`)
+  <Card title="Réservation 30 jours" color="#f59e0b" icon="calendar-clock">
+    Un pseudo libéré reste réservé 30 jours pour vous.
+  </Card>
 
-Les paramètres sont organisés en sections :
+  <Card title="Bio riche" color="#a78bfa" icon="pen-tool">
+    Bio, localisation, expertises, liens, spécialités.
+  </Card>
 
-| Section | Contenu |
-| --- | --- |
-| Compte | Nom, email, avatar, bio, username. |
-| Préférences | Thème, langue, mode compact. |
-| Notifications | Push, email, in-app (9 réglages). |
-| Sécurité & confidentialité | 2FA, sessions actives, RGPD, suppression de compte. |
-| Affiliations | Organisations auxquelles vous êtes rattaché. |
-| Facturation | Abonnements et factures. |
-| Suivi de certifications | Statut de vos demandes. |
-| Username | Changer votre @username. |
-| Danger zone | Suppression définitive du compte. |
+  <Card title="Statut visible" color="#1dd8b4" icon="circle">
+    En ligne, absent, ne pas déranger, invisible.
+  </Card>
+</CardGroup>
 
-## Profil public (`/@username`)
+## Les 9 sections d'un profil
 
-Accessible via `/profile/:username` ou `/@username`, visible par tout le monde même sans connexion (comme sur TikTok ou Instagram).
+<CardGroup cols={3}>
+  <Card title="Bannière & avatar" icon="image">
+  </Card>
 
-- **En-tête** : avatar, nom, @username, vérifications, badges, statistiques (abonnés, abonnements, publications).
-- **Publications** de l'utilisateur, épinglées d'abord.
-- **Bouton suivre / message** pour interagir.
-- **Affiliations** publiques visibles sous forme de chips (logo d'organisation).
+  <Card title="Bio & localisation" icon="map-pin">
+  </Card>
 
-<Tip>
-  **Un profil complet rassure.** Une photo claire, une bio précise, un site web et des badges donnent confiance. Un profil complet est plus facile à trouver et plus crédible.
-</Tip>
+  <Card title="Badges" icon="award">
+  </Card>
 
-## Le @username
+  <Card title="Expertises" icon="star">
+  </Card>
 
-Votre @username est unique et vous identifie partout : mentions (@pseudo) et URL publique (`eza.group/@pseudo`).
+  <Card title="Liens externes" icon="link">
+  </Card>
 
-<Warning>
-  **Choisi pour la vie.** Après une suppression de compte, l'ancien @username est gardé en réserve pendant 30 jours (entité `DeletedUsername`) pour empêcher qu'un nouveau compte n'usurpe votre identité.
-</Warning>
+  <Card title="Publications" icon="grid-2x2">
+  </Card>
 
-## Préférences
+  <Card title="Portfolio" icon="folder">
+  </Card>
 
-Vous personnalisez votre profil dans les paramètres :
+  <Card title="Activité forum" icon="messages-square">
+  </Card>
 
-- **Thème** : automatique, clair, ou sombre.
-- **Langue** : fr, en, es, de.
-- **Mode compact** : réduit paddings et tailles.
-- **Statut en ligne** : afficher ou masquer votre présence.
+  <Card title="Avis reçus" icon="thumbs-up">
+  </Card>
+</CardGroup>
 
-Vos préférences sont enregistrées (`UserPreferences`) et vous suivent sur tous vos appareils. Un composant `PreferencesApplier` les applique automatiquement au chargement.
+## Éditer mon profil
 
-## Vérifications et badges
+<Steps>
+</Steps>
 
-Les vérifications et badges sont affichés sur votre profil, vos publications, vos stories et vos Spaces.
+## Badges affichés
 
 | Badge | Signification |
 | --- | --- |
-| Vérifié | Identité vérifiée. |
-| Pro | Statut professionnel confirmé. |
-| Certifié | Certification eza obtenue. |
-| Officiel | Compte officiel (équipe eza ou organisation). |
-| Fondateur | Badge historique fondateur. |
-| Pilote | Certification pilote. |
-| VIP | Statut VIP. |
-| Partenaire | Partenaire officiel. |
+| 🏆 Certifié | Identité vérifiée par eza |
+| ⭐ Business | Abonnement actif |
+| 🎓 Formateur | Statut formateur validé |
+| ✨ Créateur | Producteur de contenu |
+| 🛡️ Modérateur | Membre de la modération |
 
-Le clic sur une vérification ouvre une modale d'affiliation ou navigue vers le profil.
+## Préférences
+
+<CardGroup cols={2}>
+  <Card title="UserPreferences" color="#38aadc" icon="sliders">
+    Thème, langue, densité, notifications, confidentialité.
+  </Card>
+
+  <Card title="Statut personnalisé" color="#a78bfa" icon="message-circle">
+    Un message court affiché à côté de votre nom.
+  </Card>
+</CardGroup>
+
+## Suppression et pseudo
+
+<Note>
+  **Pseudo réservé 30 jours.** Si vous changez ou supprimez votre @username, il reste réservé pour vous pendant 30 jours (entity `DeletedUsername`). Personne d'autre ne peut le prendre pendant cette période.
+</Note>

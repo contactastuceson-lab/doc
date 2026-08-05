@@ -5,18 +5,38 @@ icon: "circle-play"
 sidebarTitle: "Les stories"
 ---
 
-Les stories sont des contenus qui disparaissent après 24h. Elles peuvent être une photo, une vidéo ou un simple texte coloré, créées depuis le studio intégré.
+<CardGroup cols={2}>
+  <Card title="24h chrono" color="#fb7185" icon="timer">
+    Vos stories disparaissent après 24 heures.
+  </Card>
+
+  <Card title="Studio intégré" color="#38aadc" icon="camera">
+    Photo, vidéo, texte coloré, filtres, stickers, dessin.
+  </Card>
+
+  <Card title="Voir les viewers" color="#a78bfa" icon="eye">
+    Liste temps réel de qui a regardé et réagi.
+  </Card>
+
+  <Card title="Réactions emoji" color="#f59e0b" icon="smile">
+    Vos amis réagissent en un geste.
+  </Card>
+</CardGroup>
 
 ## Créer une story
 
 <Tip>
-  **Stories texte.** Pas envie de photo ? Créez une story texte : choisissez un fond en dégradé, écrivez votre message, publiez. Simple et efficace.
+  **Stories texte.** Pas envie de photo ? Fond en dégradé \+ texte, publiez. Simple et efficace.
 </Tip>
 
 ## Voir qui a regardé
 
-Vous voyez en direct qui a regardé vos stories et les réactions reçues (likes et réponses emoji).
+<Columns cols={2}>
+  <Card title="Glissez vers le haut" color="#38aadc" icon="chevron-up">
+    Depuis votre story, la liste des viewers apparaît.
+  </Card>
 
-- Ouvrez votre story et glissez vers le haut.
-- Vous voyez la liste des personnes et leurs réactions.
-- Les likes et réponses s'affichent en temps réel.
+  <Card title="Réactions live" color="#fb7185" icon="heart">
+    Likes et réponses emoji s'affichent en temps réel.
+  </Card>
+</Columns>

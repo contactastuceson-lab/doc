@@ -5,54 +5,60 @@ icon: "message"
 sidebarTitle: "La messagerie"
 ---
 
-La messagerie eza permet des conversations privées 1-à-1 en temps réel avec un système de demandes de contact pour éviter le spam.
+<CardGroup cols={2}>
+  <Card title="Temps réel" color="#38aadc" icon="zap">
+    Nouveaux messages instantanés, statut en ligne, marquage lu.
+  </Card>
 
-## Comment ça marche
+  <Card title="Anti-spam natif" color="#1dd8b4" icon="shield">
+    Système de demandes de contact avant conversation.
+  </Card>
 
-Une conversation est identifiée par les emails des deux participants triés alphabétiquement. Chaque message contient :
+  <Card title="Raffinement IA" color="#a78bfa" icon="sparkles">
+    Reformulez votre message avant envoi. Vous décidez.
+  </Card>
 
-- `sender_email`, `recipient_email`, `content`.
-- Statut lu / non lu (`is_read`).
-- Type spécial possible : demande (`is_request`), officiel (`is_official`), avertissement (`is_warning`).
+  <Card title="Modération" color="#f59e0b" icon="lock">
+    Verrouillage, blocage, signalement disponibles.
+  </Card>
+</CardGroup>
 
 ## Le système de demandes
-
-Le premier message envoyé à quelqu'un est une **demande de contact**. La conversation reste isolée dans le panneau des demandes tant qu'elle n'est pas acceptée.
 
 <Steps>
 </Steps>
 
 <Tip>
-  **Anti-spam natif.** Tant qu'une demande n'est pas acceptée, la conversation reste isolée. Votre boîte principale est protégée du spam.
+  **Anti-spam natif.** Tant qu'une demande n'est pas acceptée, la conversation reste isolée dans le panneau des demandes.
 </Tip>
 
-## Messages officiels et avertissements
+## Types de messages spéciaux
 
-L'équipe eza peut envoyer trois types de messages spéciaux :
+<CardGroup cols={3}>
+  <Card title="Officiel" color="#38aadc" icon="badge-check">
+    Badge officiel, style dédié. Envoyé par l'équipe eza.
+  </Card>
 
-| Type | Affichage |
+  <Card title="Avertissement" color="#f59e0b" icon="triangle-alert">
+    Couleur orange, mise en évidence. Modération.
+  </Card>
+
+  <Card title="Note admin" color="#71717a" icon="eye-off">
+    Interne, invisible côté utilisateur.
+  </Card>
+</CardGroup>
+
+## Modération de la conversation
+
+| Mode | Effet |
 | --- | --- |
-| Officiel (`is_official`) | Badge officiel, style dédié. |
-| Avertissement (`is_warning`) | Couleur orange, mise en évidence. |
-| Note admin (`is_admin_note`) | Non visible côté utilisateur. |
+| Verrouillage bilatéral | Plus personne ne peut écrire |
+| Verrouillage unilatéral | Un seul participant est bloqué en écriture |
+| Blocage | Blocage unidirectionnel entre les deux |
+| Motif | Raison conservée pour audit |
 
-## Temps réel
-
-Les messages utilisent les subscriptions temps réel : les nouveaux messages arrivent instantanément sans recharger la page, avec statut en ligne, auto-scroll et marquage automatique en lu.
-
-## Modération des conversations
-
-Chaque conversation peut être modérée via un contrôle :
-
-- **Verrouillage bilatéral** : plus personne ne peut écrire dans la conversation.
-- **Verrouillage unilatéral** : vous êtes verrouillé sur cette conversation.
-- **Blocage** : blocage unidirectionnel entre les deux participants.
-- Motif de modération conservé.
-
-## Raffinement IA du message
-
-Dans le composer, vous pouvez demander à l'IA de reformuler votre message (plus poli, plus clair, plus court) avant de l'envoyer. Vous prévisualisez le résultat, vous seul décidez d'envoyer.
+## Raffinement IA
 
 <Note>
-  **Vous restez maître.** Le raffinement est optionnel. L'IA vous aide à formuler, elle n'envoie jamais à votre place.
+  **Vous restez maître.** L'IA reformule (plus poli, plus clair, plus court). Vous prévisualisez, vous seul décidez d'envoyer.
 </Note>

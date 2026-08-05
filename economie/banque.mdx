@@ -5,35 +5,38 @@ icon: "building-columns"
 sidebarTitle: "Banque & portefeuilles"
 ---
 
-La banque vous permet de ranger vos crédits dans plusieurs portefeuilles et de les transférer entre eux ou vers d'autres utilisateurs. Vous suivez tous vos mouvements en un coup d'œil.
+<CardGroup cols={2}>
+  <Card title="Solde disponible" color="#1dd8b4" icon="wallet">
+    Crédits utilisables immédiatement.
+  </Card>
 
-## Mes portefeuilles
+  <Card title="Solde gelé" color="#38aadc" icon="snowflake">
+    Retenu temporairement pour audit ou événement en cours.
+  </Card>
 
-Vous possédez plusieurs portefeuilles pour organiser vos crédits. Chacun a un nom, un type et un solde. Vous pouvez en créer autant que nécessaire.
+  <Card title="Historique complet" color="#a78bfa" icon="history">
+    Toutes les entrées et sorties, filtrables.
+  </Card>
+
+  <Card title="Sécurité" color="#f59e0b" icon="shield">
+    RLS strictes : personne d'autre ne voit vos soldes.
+  </Card>
+</CardGroup>
+
+## Comprendre les statuts
+
+| État | Signification |
+| --- | --- |
+| Disponible | Utilisable pour un achat ou une action |
+| Gelé | Réservé pour un événement, ticket, ou audit en cours |
+| Débité | Sortie effectuée |
+| Crédité | Entrée validée |
+
+## Voir mon relevé
 
 <Steps>
 </Steps>
 
 <Tip>
-  **Rangez vos crédits.** Séparez vos crédits d'épargne, de dépenses courantes et de projets pour mieux piloter votre budget, comme des enveloppes virtuelles.
+  **Portefeuille gelé.** Lorsque vous vous inscrivez à un événement payant, les crédits sont d'abord gelés. Ils passent en débit définitif après check-in confirmé ou expiration du délai d'annulation.
 </Tip>
-
-## Transférer des crédits
-
-<Steps>
-</Steps>
-
-Chaque transfert vérifie que vous avez assez de crédits et qu'aucun portefeuille n'est gelé.
-
-<Warning>
-  **Portefeuille gelé.** Si un portefeuille est gelé par l'administration (fraude suspectée), il ne peut ni envoyer ni recevoir de crédits. Le gel se lève une fois la situation vérifiée par le support (Nexus peut le faire).
-</Warning>
-
-## Mon historique
-
-La banque affiche l'historique complet :
-
-- Tous vos mouvements en un seul endroit.
-- Montants clairs (\+ entrée, − sortie).
-- Filtres pour retrouver une transaction précise.
-- Détails : contexte, portefeuille source/destination, date.

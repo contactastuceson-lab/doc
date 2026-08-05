@@ -5,59 +5,86 @@ icon: "comments"
 sidebarTitle: "Le forum"
 ---
 
-Le forum eza rassemble des discussions classées par catégorie. Vous créez des sujets, y répondez, aimez les réponses et marquez les meilleures comme solution.
+<CardGroup cols={2}>
+  <Card title="Discussions catégorisées" color="#38aadc" icon="folder-tree">
+    7 catégories, tags, tri, recherche texte libre.
+  </Card>
 
-## Accès
+  <Card title="Markdown Discord" color="#a78bfa" icon="hash">
+    Titres, gras, listes, citations, blocs de code.
+  </Card>
 
-- URL : `/forum`
-- Navigation : Menu Plus → Forum
+  <Card title="Marquer une solution" color="#1dd8b4" icon="badge-check">
+    La bonne réponse devient verte, visible en tête.
+  </Card>
+
+  <Card title="Liens sécurisés" color="#f59e0b" icon="shield">
+    Aperçu de la destination avant redirection (anti-phishing).
+  </Card>
+</CardGroup>
+
+## Les 7 catégories
+
+<CardGroup cols={4}>
+  <Card title="Général" color="#38aadc" icon="circle">
+  </Card>
+
+  <Card title="Technique" color="#a78bfa" icon="cog">
+  </Card>
+
+  <Card title="Projets" color="#1dd8b4" icon="folder">
+  </Card>
+
+  <Card title="Services" color="#f59e0b" icon="briefcase">
+  </Card>
+
+  <Card title="Formation" color="#6366f1" icon="graduation-cap">
+  </Card>
+
+  <Card title="Actualités" color="#fb7185" icon="newspaper">
+  </Card>
+
+  <Card title="Support" color="#eab308" icon="life-buoy">
+  </Card>
+</CardGroup>
 
 ## Créer une discussion
 
 <Steps>
 </Steps>
 
-## Les catégories
-
-| Catégorie | Couleur |
-| --- | --- |
-| Général | Bleu |
-| Technique | Violet |
-| Projets | Vert |
-| Services | Orange |
-| Formation | Indigo |
-| Actualités | Rouge |
-| Support | Jaune |
-
-## Répondre et marquer une solution
-
-- Ouvrez la discussion et descendez jusqu'à « Votre réponse ».
-- Rédigez en Markdown (titres, gras, listes, citations, code).
-- Aimez les réponses utiles (icône cœur).
-- L'auteur du sujet peut marquer la meilleure réponse comme « solution » : elle devient verte et bien visible en tête.
-
 ## Filtrer et rechercher
 
-- **Recherche** : texte libre dans tous les sujets.
-- **Catégorie** : 7 options \+ « Toutes ».
-- **Tri** : Récents / Populaires / Plus de réponses / Sans réponse.
-- **Réinitialiser** : bouton pour effacer les filtres.
+<Columns cols={2}>
+  <Card title="Filtres" icon="filter">
+    Catégorie, tri (récents, populaires, plus de réponses, sans réponse), bouton reset.
+  </Card>
 
-## Discussions mises en avant
+  <Card title="Recherche" icon="search">
+    Texte libre dans tous les sujets. Insensible à la casse.
+  </Card>
+</Columns>
 
-| Badge | Signification |
-| --- | --- |
-| Épinglé | Sujet important, apparaît en premier. |
-| Fermé | Plus de nouvelles réponses possibles. |
-| Solution | Une réponse résout la discussion (post vert). |
-| Officiel | Sujet publié par l'équipe eza. |
-| Annonce | Annonce mise en avant avec bandeau. |
+## Badges de discussion
 
-## Rendu et liens externes
+<CardGroup cols={2}>
+  <Card title="📌 Épinglé" color="#f59e0b">
+    Sujet important, apparaît en premier.
+  </Card>
 
-- Rendu Markdown style Discord (titres, gras, italique, listes, citations, blocs de code).
-- Les liens externes déclenchent une modale d'aperçu qui montre la destination avant redirection : protection anti-phishing.
+  <Card title="🔒 Fermé" color="#71717a">
+    Plus de nouvelles réponses possibles.
+  </Card>
 
-## Modèle de forum
+  <Card title="✓ Solution" color="#1dd8b4">
+    Une réponse a résolu le problème.
+  </Card>
 
-Le forum utilise l'entité `Discussion` (avec `DiscussionReply` pour les réponses). Un modèle alternatif `ForumTopic` / `ForumPost` existe : l'auteur reste persistant même après suppression de compte.
+  <Card title="🏆 Officiel" color="#38aadc">
+    Publié par l'équipe eza.
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Marquer une solution.** L'auteur du sujet peut désigner la meilleure réponse. Elle devient verte et remonte en tête, utile pour tout le monde.
+</Tip>

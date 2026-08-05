@@ -5,72 +5,116 @@ icon: "briefcase"
 sidebarTitle: "Mon portfolio"
 ---
 
-Le portfolio est la vitrine professionnelle d'eza. Il présente des projets, filtrables par catégorie, avec des comparaisons avant/après interactives, une carte géographique et des avis clients notés en étoiles.
+<CardGroup cols={2}>
+  <Card title="Galerie filtrable" color="#38aadc" icon="grid-2x2">
+    6 catégories, filtres instantanés, grille responsive.
+  </Card>
 
-## Page `/portfolio`
+  <Card title="Avant / Après" color="#a78bfa" icon="split">
+    Sliders glissables. Le montrer plutôt que le dire.
+  </Card>
 
-La page portfolio se compose de :
+  <Card title="Avis clients" color="#f59e0b" icon="star">
+    Notes 1 à 5 étoiles, commentaires, badge « Client vérifié ».
+  </Card>
 
-- **Hero** : titre « Portfolio EZA » et description.
-- **Galerie** : filtres par catégorie, grille de cartes, ouverture d'un détail au clic (médias, description, tags, avis clients).
-- **Comparaisons avant / après** : sliders glissables.
-- **Carte interactive** : projets géolocalisés.
+  <Card title="Carte interactive" color="#1dd8b4" icon="map-pin">
+    Projets géolocalisés sur carte Leaflet zoomable.
+  </Card>
+</CardGroup>
 
-## Les projets
+## Anatomie d'un projet
 
-Chaque projet contient :
+<Columns cols={2}>
+  <Frame>
+    | Champ | Contenu |
+    | --- | --- |
+    | Titre | Nom du projet |
+    | Description | Contexte, résultat |
+    | Média | Image, YouTube, TikTok, Instagram, Vimeo |
+    | Catégorie | Événement, inspection, chantier… |
+    | Client | Nom du client |
+    | Date | Date de réalisation |
+    | Tags | Mots-clés |
+    | Vedette | Mis en avant |
+  </Frame>
 
-- Titre, description, tags.
-- Catégorie : événement, inspection, chantier, particulier, entreprise, formation.
-- Média : image, YouTube, TikTok, Instagram ou Vimeo.
-- URL du média et miniature.
-- Nom du client, date de réalisation.
-- Marqueurs : vedette, publié, ordre d'affichage.
+  <Frame>
+    **Rendu média selon le type :**
 
-### Rendu média
+    - `image` → image directe
+    - `youtube` → embed iframe
+    - `tiktok` / `instagram` / `vimeo` → miniature \+ lien
 
-| Type | Rendu |
-| --- | --- |
-| `image` | Image directe. |
-| `youtube` | Embed iframe (extraction automatique de l'ID). |
-| `tiktok` / `instagram` / `vimeo` | Miniature \+ lien externe. |
+    Chargement différé (`LazyMedia`), lecture vidéo optimisée (`VideoPlayer`).
+  </Frame>
+</Columns>
 
-<Tip>
-  **Plus c'est visuel, mieux c'est.** Ajoutez plusieurs photos et vidéos à chaque projet : un visuel vaut mille mots. Le portfolio est votre meilleure carte de visite.
-</Tip>
+## Les 6 catégories
+
+<CardGroup cols={3}>
+  <Card title="Événement" color="#fb7185" icon="party-popper">
+  </Card>
+
+  <Card title="Inspection" color="#38aadc" icon="search">
+  </Card>
+
+  <Card title="Chantier" color="#f59e0b" icon="hammer">
+  </Card>
+
+  <Card title="Particulier" color="#1dd8b4" icon="home">
+  </Card>
+
+  <Card title="Entreprise" color="#a78bfa" icon="building">
+  </Card>
+
+  <Card title="Formation" color="#ff6d3f" icon="graduation-cap">
+  </Card>
+</CardGroup>
 
 ## Comparaisons avant / après
 
-Le portfolio propose des comparaisons avant/après avec un curseur interactif (`BeforeAfterSlider`) : on glisse de gauche à droite pour révéler la transformation.
-
-Chaque comparaison contient :
-
-- Titre et catégorie.
-- Image « avant » et image « après ».
-- Libellés personnalisés.
-- Description, ordre d'affichage, statut publié.
-
 <Note>
-  **Preuve sociale maximale.** Montrez le résultat réel d'une prestation. Un curseur avant/après convertit mieux que n'importe quel argument.
+  **Preuve sociale maximale.** Le curseur glissable révèle la transformation. C'est l'outil de conversion le plus puissant du portfolio.
 </Note>
+
+<Steps>
+</Steps>
 
 ## Avis clients
 
-Chaque projet peut recevoir des avis :
+<CardGroup cols={2}>
+  <Card title="Notation" color="#f59e0b" icon="star">
+    Étoiles de 1 à 5, moyenne calculée automatiquement.
+  </Card>
 
-- Note en étoiles de 1 à 5.
-- Commentaire optionnel.
-- Pour les utilisateurs connectés : pré-rempli avec leur profil.
-- Pour les invités : saisie du nom.
-- Badge « Client vérifié » attribué après validation par la modération.
-- Moyenne des notes affichée automatiquement.
+  <Card title="Commentaire" color="#38aadc" icon="message-circle">
+    Texte libre optionnel pour détailler l'expérience.
+  </Card>
+
+  <Card title="Client vérifié" color="#1dd8b4" icon="badge-check">
+    Badge attribué après validation par la modération.
+  </Card>
+
+  <Card title="Utilisateurs et invités" color="#a78bfa" icon="users">
+    Connectés : profil pré-rempli. Invités : saisie du nom.
+  </Card>
+</CardGroup>
 
 ## Carte interactive
 
 Les projets localisés apparaissent sur une carte Leaflet.
 
-- Titre, ville, catégorie (immobilier, mariage, tourisme).
-- Coordonnées latitude/longitude.
-- Miniature et ID YouTube optionnels.
-- Filtre par catégorie superposé.
-- Marqueurs cliquables ouvrant le détail du projet.
+| Élément | Détail |
+| --- | --- |
+| Marqueur | Un pin par projet |
+| Titre | Nom du projet |
+| Ville | Localisation lisible |
+| Catégorie | Immobilier, mariage, tourisme |
+| Coordonnées | Latitude/longitude précises |
+| Filtre | Superposé sur la carte |
+| Clic | Ouvre le détail du projet |
+
+<Tip>
+  **Plus c'est visuel, mieux c'est.** Ajoutez plusieurs photos et une vidéo à chaque projet. Le portfolio est votre meilleure carte de visite.
+</Tip>

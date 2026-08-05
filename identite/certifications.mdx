@@ -5,42 +5,54 @@ icon: "award"
 sidebarTitle: "Les certifications"
 ---
 
-Les certifications permettent d'obtenir un badge de vérification officiel. Le processus combine un questionnaire, un paiement Stripe et une revue par l'équipe eza.
+<CardGroup cols={2}>
+  <Card title="Badge officiel" color="#38aadc" icon="badge-check">
+    Preuve visible que votre identité a été vérifiée.
+  </Card>
 
-## Flux utilisateur
+  <Card title="Paiement Stripe" color="#a78bfa" icon="credit-card">
+    Frais unique, paiement sécurisé Stripe.
+  </Card>
+
+  <Card title="Vérification humaine" color="#1dd8b4" icon="user-check">
+    Un modérateur examine votre demande sous 48-72h.
+  </Card>
+
+  <Card title="Remboursable" color="#f59e0b" icon="undo">
+    Si votre demande est refusée, remboursement automatique.
+  </Card>
+</CardGroup>
+
+## Types de certifications
+
+<CardGroup cols={3}>
+  <Card title="Identité" color="#38aadc" icon="fingerprint">
+    Vous êtes bien qui vous prétendez être.
+  </Card>
+
+  <Card title="Professionnel" color="#a78bfa" icon="briefcase">
+    Votre activité est confirmée par documents.
+  </Card>
+
+  <Card title="Formation" color="#1dd8b4" icon="graduation-cap">
+    Formateur ou établissement reconnu.
+  </Card>
+</CardGroup>
+
+## Demander une certification
 
 <Steps>
 </Steps>
 
-## L'entité `CertificationRequest`
+## Statuts possibles
 
-Chaque demande contient :
-
-- Email, nom, statut (`pending`, `approved`, `rejected`).
-- Réponses au questionnaire (`responses`).
-- Date de soumission.
-- Statut de paiement, IDs Stripe.
-- Notes admin (invisibles côté utilisateur).
-
-<Tip>
-  **Paiement sécurisé.** Le paiement des frais de certification passe par Stripe. eza ne stocke jamais vos données de carte.
-</Tip>
-
-## Suivre ma demande
-
-Vous suivez l'avancement en temps réel dans « Suivi de certifications » (page profil).
-
-- Statut en direct de votre demande.
-- Page de confirmation `/certification-success` après approbation.
-- Remboursement possible en cas de refus (`refundCertification`).
-- Historique complet de vos demandes.
-
-## Sécurité (RLS)
-
-- Création : réservée au propriétaire (`user_email`).
-- Lecture : propriétaire ou admin.
-- Mise à jour / suppression : admin uniquement.
+| Statut | Signification |
+| --- | --- |
+| `pending` | En attente d'examen |
+| `approved` | Validée, badge affiché |
+| `rejected` | Refusée, remboursement automatique |
+| `revoked` | Retirée après signalement |
 
 <Note>
-  **Un signal de confiance.** Un badge de certification n'est pas cosmétique : il signale que votre identité ou votre statut a été vérifié par eza. C'est un gage de confiance pour les clients et la communauté.
+  **Refund automatique.** La fonction `refundCertification` déclenche un remboursement Stripe si le statut passe à `rejected`.
 </Note>

@@ -5,43 +5,38 @@ icon: "building"
 sidebarTitle: "Les affiliations"
 ---
 
-Les affiliations rattachent un utilisateur à une organisation. Une fois affilié, le logo de l'organisation apparaît sur votre profil, comme un badge d'emploi vérifié.
+<CardGroup cols={2}>
+  <Card title="Rattachement officiel" color="#38aadc" icon="link">
+    Votre profil affiche le logo et le nom de l'organisation.
+  </Card>
 
-## L'entité `OrganizationAffiliation`
+  <Card title="Visibilité fine" color="#a78bfa" icon="eye">
+    Affichage public ou privé, à votre convenance.
+  </Card>
 
-Chaque affiliation contient :
+  <Card title="Rôle affiché" color="#1dd8b4" icon="briefcase">
+    Fondateur, employé, membre, bénévole…
+  </Card>
 
-- `organizationId` et `userId`.
-- Rôle : `member` par défaut.
-- Statut : `pending`, `accepted`, `rejected`, `removed`.
-- Visibilité du logo : `public` ou `private`.
-- Snapshots : nom et avatar de l'organisation.
-- Dates : création, acceptation, suppression.
+  <Card title="Multi-affiliation" color="#f59e0b" icon="layers">
+    Plusieurs organisations en même temps.
+  </Card>
+</CardGroup>
 
-## Le flux d'affiliation
+## Demander une affiliation
 
 <Steps>
 </Steps>
 
+## Statuts
+
+| Statut | Effet |
+| --- | --- |
+| `pending` | En attente de validation |
+| `approved` | Affiliation active |
+| `rejected` | Refusée |
+| `revoked` | Retirée par l'organisation |
+
 <Tip>
-  **Un signal de confiance.** Une affiliation approuvée prouve que vous représentez officiellement une organisation. C'est un signal vérifiable par tout le monde.
+  **Visibilité contrôlée.** Vous pouvez choisir de rendre une affiliation privée. Elle reste vérifiée mais n'apparaît pas publiquement.
 </Tip>
-
-## Composants et vues
-
-- **`AffiliationBadges`** : chips d'affiliation sur les profils et cartes.
-- **`OrganizationAffiliationsTab`** : vue côté organisation (gérer ses membres).
-- **`MyAffiliationsTab`** : vue côté utilisateur (mes rattachements).
-- **`AffiliationModal`** : modale ouverte au clic sur un chip.
-
-## Retirer une affiliation
-
-Une affiliation peut être retirée par vous, par l'organisation, ou par l'admin dans les cas litigieux. Une demande de retrait peut être soumise pour les cas sensibles.
-
-## Écosystème (`/ecosysteme`)
-
-La page Écosystème présente l'ensemble des organisations et partenaires affiliés à eza. C'est un annuaire visible de l'écosystème EZA Group.
-
-<Note>
-  **Écosystème visible.** Les affiliations créent un écosystème lisible : on voit d'un coup d'œil quelles organisations vous représentez et qui gravite autour d'eza.
-</Note>

@@ -5,54 +5,51 @@ icon: "bag-shopping"
 sidebarTitle: "La boutique"
 ---
 
-La boutique vend des packs de crédits (en euros), des abonnements qui débloquent des avantages, et des tokens consommables.
+<CardGroup cols={2}>
+  <Card title="4 formules" color="#38aadc" icon="layers">
+    Free, Starter, Pro, Business : choisissez ce qui vous ressemble.
+  </Card>
 
-## Acheter des crédits
+  <Card title="Paiement Stripe" color="#a78bfa" icon="credit-card">
+    Billing portal Stripe, sécurité maximale.
+  </Card>
+
+  <Card title="Tokens crédits" color="#1dd8b4" icon="coins">
+    Recharges instantanées de crédits via Stripe.
+  </Card>
+
+  <Card title="Dons libres" color="#fb7185" icon="heart">
+    Soutenez eza ou un créateur à hauteur libre.
+  </Card>
+</CardGroup>
+
+## Les 4 tiers
+
+<CardGroup cols={2}>
+  <Card title="Free" color="#71717a" icon="user">
+    Toutes les fonctions essentielles gratuitement.
+  </Card>
+
+  <Card title="Starter" color="#38aadc" icon="rocket">
+    Crédits mensuels, boost léger.
+  </Card>
+
+  <Card title="Pro" color="#a78bfa" icon="star">
+    Crédits généreux, boost fort, badges pro.
+  </Card>
+
+  <Card title="Business" color="#f59e0b" icon="briefcase">
+    Communauté épinglée, design premium, priorité support.
+  </Card>
+</CardGroup>
+
+## Recharger en crédits
 
 <Steps>
 </Steps>
 
-<Tip>
-  **Paiement sécurisé.** Le paiement passe par Stripe. eza ne stocke jamais vos données de carte.
-</Tip>
-
-## Les abonnements
-
-Quatre paliers débloquent progressivement plus d'avantages.
-
-| Palier | Avantages |
-| --- | --- |
-| Gratuit | Accès de base : réseau social, forum, communautés. |
-| Pro | Plus de crédits, avantages créateur, statistiques avancées. |
-| Business | Publicité, posts sponsorisés, capacité étendue, communauté premium. |
-| Enterprise | Tout Business \+ vérification entreprise, support prioritaire. |
-
-Vous gérez votre abonnement depuis le portail Stripe (`createBillingPortal`) :
-
-- Voir vos factures.
-- Changer de moyen de paiement.
-- Annuler à tout moment (`cancelSubscription`).
+## Gérer mon abonnement
 
 <Note>
-  **Annulation.** L'annulation prend effet à la fin de la période payée. Votre abonnement reste actif jusque-là.
+  **Stripe Billing Portal.** Depuis « Mon compte » → « Facturation », vous accédez au portail Stripe : historique, factures, changement de plan, résiliation.
 </Note>
-
-## Les tokens (avantages consommables)
-
-Les tokens sont des avantages consommables au moment de votre choix :
-
-- **Boost** : plus de visibilité pour un post pendant X heures.
-- **Épinglage 24h ou 7 jours** : votre post en haut du fil de la communauté.
-- **Design premium** : communauté avec un look amélioré.
-- **Capacité étendue** : plus de membres pour une communauté.
-
-## Dons
-
-En parallèle, eza propose un système de dons via Stripe :
-
-- Page `/donation` : faire un don.
-- Page `/donation-success` : confirmation.
-- Fonction `createDonationPayment` (Stripe) puis `syncStripeDonations`.
-- Confirmation par email : `sendDonationConfirmation`.
-
-Les dons apparaissent sur les pages profil/écosystème selon la visibilité choisie.

@@ -5,26 +5,67 @@ icon: "newspaper"
 sidebarTitle: "Le fil d'actualités"
 ---
 
-Le fil d'actualité est le cœur d'eza. Vous y publiez du contenu (texte, photos, vidéos, sondages), vous réagissez (likes, réponses, partages) et vous suivez d'autres comptes. Les hashtags et mentions sont détectés automatiquement.
+<CardGroup cols={2}>
+  <Card title="Texte, médias, sondages" color="#38aadc" icon="pen-square">
+    Photos, vidéos, GIFs GIPHY, sondages interactifs.
+  </Card>
+
+  <Card title="Hashtags & mentions" color="#1dd8b4" icon="hash">
+    Détectés automatiquement, `#tag` et `@user`.
+  </Card>
+
+  <Card title="Interactions live" color="#fb7185" icon="heart">
+    Likes, réponses, partages en temps réel.
+  </Card>
+
+  <Card title="Visibilité fine" color="#a78bfa" icon="eye">
+    Public ou abonnés seulement.
+  </Card>
+</CardGroup>
 
 ## Anatomie d'une publication
 
-Une publication contient :
+| Élément | Description |
+| --- | --- |
+| Contenu | Texte avec hashtags et mentions |
+| Médias | Images, vidéos, GIFs |
+| Sondage | Question \+ options \+ votes live |
+| Likes | Compteur `likes_count`, liste `liked_by` |
+| Réponses | Fil de discussion sous le post |
+| Vues | Compteur automatique |
+| Épinglage | Post mis en haut du profil |
+| Visibilité | `public` ou `followers` |
+| Auteur | Snapshot : nom, avatar, badges |
 
-- **Contenu texte** avec hashtags `#` et mentions `@username` détectés automatiquement.
-- **Médias** : images, vidéos, GIFs (via GIPHY).
-- **Sondages** : question \+ options \+ votes en temps réel.
-- **Likes** et compteur `likes_count`.
-- **Réponses** (fil de discussion sous le post).
-- **Vues** comptées automatiquement.
-- **Épinglage** possible.
-- **Visibilité** : `public` ou `followers`.
-- **Auteur** (snapshot : nom, username, avatar, vérifications).
+## Publier
 
-## Publier du contenu
+## Interactions
 
-<Steps>
-</Steps>
+<CardGroup cols={3}>
+  <Card title="J'aime" color="#fb7185" icon="heart">
+    Un clic pour montrer votre appréciation.
+  </Card>
+
+  <Card title="Répondre" color="#38aadc" icon="reply">
+    Ouvre une conversation sous le post.
+  </Card>
+
+  <Card title="Reposter" color="#1dd8b4" icon="repeat">
+    Partagez sur votre propre fil.
+  </Card>
+
+  <Card title="Citer" color="#a78bfa" icon="quote">
+    Repost \+ votre commentaire.
+  </Card>
+
+  <Card title="Signaler" color="#f59e0b" icon="flag">
+    Prévenez la modération.
+  </Card>
+
+  <Card title="Épingler" color="#ff6d3f" icon="pin">
+    Mettez un post en haut de votre profil.
+  </Card>
+</CardGroup>
 
 <Tip>
   **Autocomplétion des mentions.** Quand vous tapez @, une liste de suggestions apparaît pour choisir le bon @username sans faute de frappe.
@@ -58,3 +99,21 @@ Une publication contient :
 <Note>
   **`public` ou `followers`.** Un post `public` est visible par tout le monde, même sans compte. Un post `followers` n'est visible que par vos abonnés. Choisissez au moment de publier.
 </Note>
+
+<Note>
+  **Extraction automatique.** Chaque `#mot` du contenu est indexé. La sidebar droite affiche les tendances (hashtags les plus utilisés, calculés depuis posts \+ forum).
+</Note>
+
+Recherche par hashtag : `/?tag=monTag`
+
+## Suivre des comptes
+
+<Columns cols={2}>
+  <Card title="S'abonner" color="#38aadc" icon="user-plus">
+    Voir les posts d'un compte dans votre fil personnalisé.
+  </Card>
+
+  <Card title="Découvrir" color="#a78bfa" icon="compass">
+    Page `/discover` : suggestions et exploration élargie.
+  </Card>
+</Columns>

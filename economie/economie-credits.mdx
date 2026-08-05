@@ -5,51 +5,74 @@ description: "La monnaie interne d'eza"
 icon: "coins"
 ---
 
-Les crédits Eza sont la monnaie interne de la plateforme. Vous en gagnez en participant à la vie d'eza et vous les dépensez pour des événements, la boutique ou des avantages. Chaque mouvement est tracé.
+<CardGroup cols={2}>
+  <Card title="Gagnez en participant" color="#1dd8b4" icon="gift">
+    Publications, likes reçus, parrainages, événements.
+  </Card>
 
-## Gagner des crédits
+  <Card title="Dépensez ce qui vous plaît" color="#38aadc" icon="shopping-cart">
+    Certifications, ads, événements payants, boutique.
+  </Card>
 
-Vous gagnez des crédits gratuitement en étant actif. Plus vous participez, plus vous gagnez.
+  <Card title="Historique audité" color="#a78bfa" icon="history">
+    Toutes les transactions dans une AuditLog immuable.
+  </Card>
 
-- **Publier un post** : récompense automatique.
-- **Recevoir des likes** sur vos posts.
-- **Connexion quotidienne** : bonus de présence.
-- **Parrainage** : crédits quand vos invités rejoignent eza et à chaque jalon atteint.
-- **Badges et jalons** : récompenses ponctuelles à la validation.
+  <Card title="Anti-fraude" color="#f59e0b" icon="shield">
+    Détection automatique de comportements suspects.
+  </Card>
+</CardGroup>
 
-<Tip>
-  **Suivez votre solde.** Votre solde de crédits est visible dans la Banque, avec l'historique complet de tous vos mouvements (gains, dépenses, transferts).
-</Tip>
+## Comment gagner des crédits
 
-## Dépenser des crédits
+<CardGroup cols={3}>
+  <Card title="Publier régulièrement" color="#38aadc" icon="pen-square">
+  </Card>
 
-Les crédits servent à accéder à des choses payantes sur eza sans sortir de carte bancaire.
+  <Card title="Likes reçus" color="#fb7185" icon="heart">
+  </Card>
 
-| Usage | Détail |
+  <Card title="Parrainage" color="#1dd8b4" icon="users">
+  </Card>
+
+  <Card title="Événement organisé" color="#a78bfa" icon="calendar">
+  </Card>
+
+  <Card title="Certification approuvée" color="#f59e0b" icon="badge-check">
+  </Card>
+
+  <Card title="Achat boutique" color="#6366f1" icon="shopping-bag">
+  </Card>
+</CardGroup>
+
+## Comment dépenser des crédits
+
+| Action | Coût indicatif |
 | --- | --- |
-| Événements | S'inscrire à un événement payant. |
-| Boutique | Tokens boost, épinglage de post, design premium de communauté. |
-| Abonnements | Certains avantages Business et Enterprise. |
-| Dons | Soutenir un créateur ou une organisation. |
+| Certification identité | Élevé |
+| Boost publication | Faible à moyen |
+| Extension communauté | Moyen |
+| Inscription événement payant | Variable |
+| Campagne publicitaire | Variable |
+| Don à un créateur | Libre |
+
+## Voir mon solde
 
 <Steps>
 </Steps>
 
-## L'historique de mes crédits
+<Note>
+  **AuditLog immuable.** Chaque transaction est écrite définitivement. Impossible à effacer ou modifier. Base d'un système financier fiable.
+</Note>
 
-Chaque mouvement est enregistré dans votre historique avec :
+## Anti-fraude
 
-- Montant avec signe (\+ entrée, − sortie).
-- Date et heure.
-- Contexte (achat, inscription, transfert, récompense).
-- Portefeuille source et destination.
+<CardGroup cols={2}>
+  <Card title="Détection auto" color="#f59e0b" icon="bot">
+    Pics anormaux, boucles suspectes, comptes multiples.
+  </Card>
 
-Vous ne voyez que vos propres mouvements. L'admin peut auditer via `AuditLog`.
-
-<Warning>
-  **Anti-fraude.** Les tentatives d'abus (multi-comptes, automatisation) sont détectées automatiquement. Elles peuvent entraîner l'annulation des récompenses et le gel du portefeuille.
-</Warning>
-
-## Acheter des crédits
-
-Vous pouvez acheter des packs de crédits en euros via la boutique (paiement Stripe). Les crédits sont ajoutés instantanément à votre portefeuille principal.
+  <Card title="Gel des fonds" color="#38aadc" icon="snowflake">
+    Un solde suspect passe en gelé le temps d'un audit.
+  </Card>
+</CardGroup>

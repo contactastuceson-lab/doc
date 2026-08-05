@@ -5,25 +5,44 @@ icon: "calendar"
 sidebarTitle: "Les événements"
 ---
 
-eza organise des événements en ligne, hybrides ou en présentiel. Vous vous inscrivez, vous récupérez un billet avec un code unique, et vous pouvez vous faire rembourser en crédits si besoin.
+<CardGroup cols={2}>
+  <Card title="Inscription en un clic" color="#38aadc" icon="ticket">
+    Prix en crédits, débit immédiat, billet généré.
+  </Card>
 
-## S'inscrire à un événement
+  <Card title="Billet avec code" color="#1dd8b4" icon="qr-code">
+    Format `EZA-AB12CD34`, scannable à l'entrée.
+  </Card>
 
-Le prix est en crédits Eza, débités à l'inscription : pas de carte bancaire à sortir.
+  <Card title="Annulation possible" color="#f59e0b" icon="undo">
+    Remboursement en crédits sous 24-48h.
+  </Card>
+
+  <Card title="Sync Outlook" color="#a78bfa" icon="calendar-clock">
+    Rendez-vous synchronisés automatiquement.
+  </Card>
+</CardGroup>
+
+## S'inscrire
 
 <Steps>
 </Steps>
 
 <Tip>
-  **Place limitée.** Certains événements ont une capacité limitée. Inscrivez-vous tôt : une fois pleine, l'inscription se ferme.
+  **Place limitée.** Beaucoup d'événements ont une capacité limitée. Une fois pleine, l'inscription ferme.
 </Tip>
 
-## Mon billet et le check-in
+## Mon billet
 
-- Votre billet est disponible dans « Mes événements ».
-- Il contient un code unique (ex : `EZA-AB12CD34`).
-- Sur place, présentez le code à un organisateur pour le check-in.
-- Les événements en ligne vous envoient un lien de connexion.
+<Columns cols={2}>
+  <Card title="Où le trouver" icon="folder">
+    « Mes événements » depuis votre profil, à tout moment.
+  </Card>
+
+  <Card title="Sur place" icon="scan-line">
+    Présentez le code à l'organisateur. Scan = check-in validé.
+  </Card>
+</Columns>
 
 ## Annuler et se faire rembourser
 
@@ -31,18 +50,14 @@ Le prix est en crédits Eza, débités à l'inscription : pas de carte bancaire 
 </Steps>
 
 <Note>
-  **Besoin d'aide ?** Pour une annulation urgente, ouvrez un ticket de support : l'IA Nexus peut traiter le remboursement en crédits automatiquement.
+  **Besoin urgent ?** Ouvrez un ticket : Nexus peut traiter le remboursement en crédits automatiquement.
 </Note>
 
 ## Organiser un événement
 
-Si vous avez le rôle d'organisateur :
-
-- Créez l'événement avec ses infos et son prix en crédits.
-- Suivez la liste des inscrits et les check-ins.
-- Validez les entrées en scannant les billets.
-- Consultez les statistiques (inscrits, revenus).
-
-## Synchronisation Outlook
-
-Les rendez-vous liés à un événement peuvent être synchronisés avec Outlook (connecteur OAuth). Les modifications sont propagées via webhooks.
+| Étape | Action |
+| --- | --- |
+| Créer | Titre, dates, lieu, prix en crédits |
+| Suivre | Liste des inscrits, check-ins temps réel |
+| Valider | Scan des billets à l'entrée |
+| Analyser | Statistiques inscrits et revenus |
