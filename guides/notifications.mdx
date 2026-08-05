@@ -5,25 +5,68 @@ description: "Recevoir l'essentiel, éviter le bruit"
 icon: "bell"
 ---
 
-eza vous informe par trois canaux : dans l'app, par notification push sur votre téléphone, et par email. Voici comment réguler ce que vous recevez.
+eza vous informe par trois canaux : dans l'app (cloche), par notification push web sur votre téléphone, et par email. Vous pouvez régler chaque type finement.
+
+## Les trois canaux
+
+| Canal | Détail |
+| --- | --- |
+| Dans l'app | Cloche en haut, visible pendant que vous naviguez sur eza. |
+| Push web (VAPID) | Sur votre téléphone, même quand l'app est fermée. |
+| Email | Récapitulatifs, confirmations et annonces importantes. |
 
 ## Régler mes préférences
 
-Chaque type d'événement (likes, messages, annonces, badges) peut être activé ou désactivé individuellement. Vous ne recevez que ce qui vous intéresse.
+Depuis « Mon profil » › « Notifications », vous avez **9 réglages** organisés en catégories :
 
-<Steps>
-</Steps>
+- **Social** : likes, réponses, mentions, follows.
+- **Messagerie** : nouveaux messages, demandes de contact.
+- **Système** : annonces, mises à jour, badges attribués.
+- **Digests** : récapitulatifs email quotidiens/hebdomadaires.
+
+Chaque réglage est un simple interrupteur. Vos réglages s'appliquent immédiatement (`updateUserPreferences`).
 
 <Tip>
   **Push sur votre téléphone.** Pour recevoir les notifications sur votre téléphone, autorisez les notifications quand eza vous le demande, puis installez l'app pour un rendu natif.
 </Tip>
 
-## Les trois canaux
+## Types de notifications in-app
 
-eza utilise trois façons de vous prévenir, selon le contexte.
+Chaque notification (`Notification`) a un type précis :
 
-| Canal | Détail |
+| Type | Déclencheur |
 | --- | --- |
-| Dans l'app | La cloche en haut, visible quand vous naviguez sur eza. |
-| Push | Sur votre téléphone, même quand l'app est fermée. |
-| Email | Récapitulatifs et annonces importantes par email. |
+| `LIKE` | Quelqu'un a aimé votre post. |
+| `REPLY` | Réponse à votre publication. |
+| `FOLLOW` | Nouveau follower. |
+| `MENTION` | Vous êtes mentionné (@username). |
+| `new_message` | Nouveau message de messagerie. |
+| `contact_request` | Nouvelle demande de contact. |
+| `quote_accepted` | Devis accepté. |
+| `blog` | Nouvel article de blog. |
+| `certification` | Statut de certification. |
+| `badge` | Nouveau badge attribué. |
+
+## Push web (VAPID)
+
+- Consentement explicite demandé la première fois.
+- Abonnement stocké côté serveur (`PushSubscription`).
+- Envoi via `sendWebPush` avec clés VAPID.
+- Support Firebase Cloud Messaging pour l'app mobile.
+- Désinscription automatique des subscriptions expirées (404/410).
+
+## Emails
+
+Les emails sont envoyés aux utilisateurs enregistrés uniquement :
+
+- Bienvenue (`sendWelcomeEmail`).
+- Code de vérification (`sendVerificationCode`).
+- Confirmation de certification (`sendCertificationEmail`).
+- Attribution de badge (`sendBadgeAssignedEmail`).
+- Confirmation de don (`sendDonationConfirmation`).
+- Devis (`sendQuoteEmail`).
+- Annonces (`sendAnnouncementNotification`).
+
+<Note>
+  **Utilisateurs enregistrés uniquement.** eza ne peut envoyer des emails qu'aux comptes existants. Pour un destinataire externe, l'app utilise les notifications in-app ou push.
+</Note>

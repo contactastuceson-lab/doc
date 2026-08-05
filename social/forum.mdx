@@ -5,32 +5,59 @@ icon: "comments"
 sidebarTitle: "Le forum"
 ---
 
-Le forum rassemble des discussions classées par catégorie. Vous créez des sujets, y répondez, aimez les réponses et marquez les meilleures comme solution. Le texte est mis en forme de façon lisible : titres, gras, listes, citations et blocs de code.
+Le forum eza rassemble des discussions classées par catégorie. Vous créez des sujets, y répondez, aimez les réponses et marquez les meilleures comme solution.
+
+## Accès
+
+- URL : `/forum`
+- Navigation : Menu Plus → Forum
 
 ## Créer une discussion
-
-Pour poser une question ou lancer un débat, créez une discussion : un titre, un contenu, une catégorie et des mots-clés. Votre discussion apparaît immédiatement dans la liste du forum.
 
 <Steps>
 </Steps>
 
-<Tip>
-  **Soyez clair.** Un titre précis et une question bien posée attirent plus de réponses. Expliquez votre contexte et ce que vous attendez.
-</Tip>
+## Les catégories
+
+| Catégorie | Couleur |
+| --- | --- |
+| Général | Bleu |
+| Technique | Violet |
+| Projets | Vert |
+| Services | Orange |
+| Formation | Indigo |
+| Actualités | Rouge |
+| Support | Jaune |
 
 ## Répondre et marquer une solution
 
-Chaque réponse peut être aimée. L'auteur de la discussion (ou un modérateur) peut marquer une réponse comme « solution » quand elle résout le problème, utile pour que tout le monde la trouve rapidement.
+- Ouvrez la discussion et descendez jusqu'à « Votre réponse ».
+- Rédigez en Markdown (titres, gras, listes, citations, code).
+- Aimez les réponses utiles (icône cœur).
+- L'auteur du sujet peut marquer la meilleure réponse comme « solution » : elle devient verte et bien visible en tête.
 
-- Répondez sous n'importe quelle discussion.
-- Aimez les réponses utiles.
-- Marquez la meilleure réponse comme solution.
-- Le texte est mis en forme (titres, gras, listes, citations).
+## Filtrer et rechercher
+
+- **Recherche** : texte libre dans tous les sujets.
+- **Catégorie** : 7 options \+ « Toutes ».
+- **Tri** : Récents / Populaires / Plus de réponses / Sans réponse.
+- **Réinitialiser** : bouton pour effacer les filtres.
 
 ## Discussions mises en avant
 
-Certaines discussions peuvent être épinglées en haut de la liste, verrouillées (plus de réponses possibles) ou marquées comme annonces officielles par l'équipe eza.
+| Badge | Signification |
+| --- | --- |
+| Épinglé | Sujet important, apparaît en premier. |
+| Fermé | Plus de nouvelles réponses possibles. |
+| Solution | Une réponse résout la discussion (post vert). |
+| Officiel | Sujet publié par l'équipe eza. |
+| Annonce | Annonce mise en avant avec bandeau. |
 
-<Note>
-  **Liens externes sécurisés.** Quand vous cliquez sur un lien externe dans une discussion, un aperçu vous montre la destination avant de vous y emmener. Cela protège du phishing.
-</Note>
+## Rendu et liens externes
+
+- Rendu Markdown style Discord (titres, gras, italique, listes, citations, blocs de code).
+- Les liens externes déclenchent une modale d'aperçu qui montre la destination avant redirection : protection anti-phishing.
+
+## Modèle de forum
+
+Le forum utilise l'entité `Discussion` (avec `DiscussionReply` pour les réponses). Un modèle alternatif `ForumTopic` / `ForumPost` existe : l'auteur reste persistant même après suppression de compte.

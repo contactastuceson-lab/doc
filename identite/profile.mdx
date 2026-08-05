@@ -5,47 +5,69 @@ icon: "id-card"
 sidebarTitle: "Mon profil"
 ---
 
-Votre profil est votre identité publique sur eza. Il affiche vos publications, votre portfolio, vos badges, vos affiliations et vos statistiques. Accessible via eza.group/@votrePseudo, c'est la vitrine de chaque membre de la communauté.
+Votre profil est votre identité publique sur eza. Il affiche vos publications, vos badges, vos affiliations et vos statistiques. La page personnelle `/profile` réunit tous vos paramètres.
 
-## Le profil public
+## Profil personnel (`/profile`)
 
-Votre profil est visible par tout le monde, connecté ou non, comme sur TikTok ou Instagram. On y voit votre photo, votre couverture, votre bio, vos badges de vérification, vos affiliations et vos publications.
+Les paramètres sont organisés en sections :
 
-- Votre profil est à eza.group/@votrePseudo.
-- Photo, couverture, bio et badges visibles par tous.
-- Vos publications, épinglées en premier.
-- Vos statistiques : abonnés, abonnements, publications.
-- Lien vers votre portfolio si vous en avez un.
+| Section | Contenu |
+| --- | --- |
+| Compte | Nom, email, avatar, bio, username. |
+| Préférences | Thème, langue, mode compact. |
+| Notifications | Push, email, in-app (9 réglages). |
+| Sécurité & confidentialité | 2FA, sessions actives, RGPD, suppression de compte. |
+| Affiliations | Organisations auxquelles vous êtes rattaché. |
+| Facturation | Abonnements et factures. |
+| Suivi de certifications | Statut de vos demandes. |
+| Username | Changer votre @username. |
+| Danger zone | Suppression définitive du compte. |
 
-## Mon @username
+## Profil public (`/@username`)
 
-Votre @username est unique et vous identifie partout. Choisissez-le avec soin : il sert pour les mentions (@pseudo) et le lien de votre profil public. Un username pris n'est plus disponible.
+Accessible via `/profile/:username` ou `/@username`, visible par tout le monde même sans connexion (comme sur TikTok ou Instagram).
 
-<Warning>
-  **Choisi pour la vie.** Après une suppression de compte, l'ancien @username est gardé en réserve pour empêcher qu'un nouveau compte ne prenne le même nom et usurpe votre identité.
-</Warning>
-
-## Personnaliser mon profil
-
-Vous personnalisez votre profil dans les paramètres : thème (clair, sombre ou automatique), mode compact pour gagner en densité, bio, localisation, site web et préférences de notification. Vos réglages vous suivent sur tous vos appareils.
-
-- Thème clair, sombre ou automatique.
-- Mode compact pour plus de densité.
-- Bio, localisation, site web.
-- Préférences de notification.
-- Vos réglages s'appliquent sur tous vos appareils.
+- **En-tête** : avatar, nom, @username, vérifications, badges, statistiques (abonnés, abonnements, publications).
+- **Publications** de l'utilisateur, épinglées d'abord.
+- **Bouton suivre / message** pour interagir.
+- **Affiliations** publiques visibles sous forme de chips (logo d'organisation).
 
 <Tip>
-  **Un profil complet rassure.** Une photo claire, une bio précise et un site web donnent confiance. Un profil complet est plus facile à trouver et plus crédible.
+  **Un profil complet rassure.** Une photo claire, une bio précise, un site web et des badges donnent confiance. Un profil complet est plus facile à trouver et plus crédible.
 </Tip>
 
-## Les badges de vérification
+## Le @username
 
-Plusieurs types de badges existent, affichés sur votre profil et vos publications. Ils signalent que votre identité ou votre statut a été vérifié par eza.
+Votre @username est unique et vous identifie partout : mentions (@pseudo) et URL publique (`eza.group/@pseudo`).
+
+<Warning>
+  **Choisi pour la vie.** Après une suppression de compte, l'ancien @username est gardé en réserve pendant 30 jours (entité `DeletedUsername`) pour empêcher qu'un nouveau compte n'usurpe votre identité.
+</Warning>
+
+## Préférences
+
+Vous personnalisez votre profil dans les paramètres :
+
+- **Thème** : automatique, clair, ou sombre.
+- **Langue** : fr, en, es, de.
+- **Mode compact** : réduit paddings et tailles.
+- **Statut en ligne** : afficher ou masquer votre présence.
+
+Vos préférences sont enregistrées (`UserPreferences`) et vous suivent sur tous vos appareils. Un composant `PreferencesApplier` les applique automatiquement au chargement.
+
+## Vérifications et badges
+
+Les vérifications et badges sont affichés sur votre profil, vos publications, vos stories et vos Spaces.
 
 | Badge | Signification |
 | --- | --- |
-| Vérifié | Votre identité est vérifiée. |
-| Pro | Votre statut professionnel est confirmé. |
-| Certifié | Vous avez passé la certification eza. |
+| Vérifié | Identité vérifiée. |
+| Pro | Statut professionnel confirmé. |
+| Certifié | Certification eza obtenue. |
 | Officiel | Compte officiel (équipe eza ou organisation). |
+| Fondateur | Badge historique fondateur. |
+| Pilote | Certification pilote. |
+| VIP | Statut VIP. |
+| Partenaire | Partenaire officiel. |
+
+Le clic sur une vérification ouvre une modale d'affiliation ou navigue vers le profil.

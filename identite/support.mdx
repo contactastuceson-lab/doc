@@ -5,11 +5,18 @@ description: "Une IA qui répond et qui agit"
 icon: "robot"
 ---
 
-Le support est piloté par Nexus, l'IA d'eza. Quand vous ouvrez un ticket, Nexus lit votre compte avant de répondre, vous répond de façon claire et structurée, et peut exécuter des actions concrètes (inscriptions, crédits, remboursements). L'escalade vers un humain est réservée aux cas critiques.
+Le support d'eza combine cette documentation, la communauté (forum et communautés), et un support intelligent piloté par Nexus, l'IA d'eza qui peut agir sur votre compte.
+
+## Par où commencer
+
+Avant d'ouvrir un ticket :
+
+- **Documentation** : les guides pratiques couvrent l'essentiel.
+- **Forum** : posez votre question, elle a peut-être déjà été résolue.
+- **Communautés** : demandez à la communauté thématique.
+- **Support** : ouvrez un ticket pour un problème précis sur votre compte.
 
 ## Ouvrir un ticket
-
-Vous décrivez votre problème, éventuellement avec des pièces jointes. Nexus analyse votre description, détecte l'élément concerné et propose une solution ou agit directement.
 
 <Steps>
 </Steps>
@@ -20,7 +27,7 @@ Vous décrivez votre problème, éventuellement avec des pièces jointes. Nexus 
 
 ## Ce que Nexus peut faire
 
-Nexus ne se contente pas de répondre, il peut réellement agir sur votre compte, comme un support humain.
+Nexus n'est pas un chatbot : c'est un agent qui lit votre compte, vérifie votre solde, vos inscriptions et vos posts avant de répondre, et qui peut exécuter des actions réelles.
 
 | Action | Détail |
 | --- | --- |
@@ -28,32 +35,34 @@ Nexus ne se contente pas de répondre, il peut réellement agir sur votre compte
 | Annulations | Annuler une inscription et rendre les crédits payés. |
 | Crédits | Créditer un geste commercial ou rembourser un achat. |
 | Transferts | Déplacer des crédits entre vos portefeuilles. |
-| Dégel | Dégeler un portefeuille vérifié (situation confirmée). |
+| Dégel | Dégeler un portefeuille vérifié. |
 | Compteurs | Recalculer les likes/compteurs d'un post si besoin. |
-
-<Note>
-  **Agent, pas chatbot.** Nexus lit votre compte, vérifie votre solde, vos inscriptions et vos posts avant de répondre. C'est un agent qui peut exécuter des actions réelles, pas un simple chatbot.
-</Note>
+| Signalements | Ouvrir ou fermer un signalement. |
 
 ## Quand Nexus transmet à un humain
 
-Nexus transmet à un humain uniquement pour les cas critiques réels : sécurité (compte piraté, harcèlement), remboursement bancaire par carte (pas les crédits), bug bloquant confirmé, suppression de compte, ou litige. Un simple « ça ne marche pas » vague reste en dépannage.
+L'escalade est réservée aux cas critiques réels :
 
 - Sécurité : compte piraté, harcèlement.
-- Remboursement bancaire par carte (pas les crédits Eza).
+- Remboursement bancaire par carte (Stripe), pas les crédits Eza.
 - Suppression de compte (RGPD).
 - Litige ou fraude.
-- Un humain reprend le dossier sous 24-48h.
+- Bug bloquant confirmé.
+
+Un humain reprend le dossier sous 24-48h.
 
 <Info>
-  **Pas d'escalade par précaution.** Nexus ne transmet pas « au cas où ». Un problème vague reste en dépannage. L'escalade est réservée aux cas critiques réels.
+  **Pas d'escalade par précaution.** Nexus ne transmet pas « au cas où ». Un problème vague reste en dépannage. L'escalade est réservée aux cas critiques.
 </Info>
 
 ## Mes conversations de support
 
-Vous retrouvez tous vos tickets dans « Support » : un tableau de bord avec vos tickets ouverts et résolus, et chaque ticket ouvre une conversation avec Nexus où vous voyez ses étapes de recherche et ses réponses.
-
-- Tableau de bord de vos tickets.
-- Conversation en direct avec Nexus.
+- Tableau de bord de vos tickets (ouverts et résolus).
+- Conversation en direct avec Nexus (entité `NexusConversation`).
 - Étapes de recherche affichées en temps réel.
-- Cartes d'action pour les opérations sensibles (Oui/Non).
+- Cartes d'action pour les opérations sensibles (validation Oui/Non).
+- Historique complet conservé.
+
+## Signalements
+
+Vous pouvez signaler un contenu, un utilisateur ou un message via `ReportModal` (icône signaler). Chaque signalement crée une entité `Report` traitée par la modération.

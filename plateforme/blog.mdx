@@ -5,18 +5,25 @@ icon: "newspaper"
 sidebarTitle: "Le blog eza"
 ---
 
-Le blog eza publie des articles d'actualité, des conseils, des tutoriels et des retours d'expérience. Chaque article a une couverture, une catégorie et un contenu riche. Les nouveaux articles apparaissent dès leur publication.
+Le blog eza publie des articles d'actualité, des conseils, des tutoriels et des retours d'expérience.
 
-## Lire les articles
+## Pages
 
-Le blog est organisé par catégories pour vous aider à trouver ce qui vous intéresse. Ouvrez un article pour le lire dans une mise en page pensée pour la lecture, avec sa couverture et ses mots-clés.
+- `/blog` : liste des articles publiés.
+- `/blog/:id` : article complet avec contenu rendu en Markdown.
 
-<Steps>
-</Steps>
+## Anatomie d'un article
+
+Chaque article (`BlogPost`) contient :
+
+- Titre, slug, extrait, contenu (HTML/Markdown).
+- Image de couverture.
+- Catégorie, tags.
+- Auteur, statut publié.
+- Vues comptées automatiquement.
+- Temps de lecture estimé.
 
 ## Les catégories
-
-Le blog range ses articles en cinq catégories pour vous aider à naviguer.
 
 | Catégorie | Contenu |
 | --- | --- |
@@ -28,9 +35,9 @@ Le blog range ses articles en cinq catégories pour vous aider à naviguer.
 
 ## Publier un article
 
-Si vous avez le droit de publier (équipe eza ou rôle autorisé), vous rédigez vos articles dans l'éditeur riche, les enregistrez en brouillon, les prévisualisez, puis les publiez quand ils sont prêts.
+Si vous avez le droit de publier (équipe eza ou rôle autorisé) :
 
-- Rédaction avec un éditeur de texte enrichi.
+- Rédaction avec un éditeur de texte enrichi (react-quill).
 - Prévisualisation avant publication.
 - Brouillon invisible tant que vous ne publiez pas.
 - Publication en un clic quand l'article est prêt.

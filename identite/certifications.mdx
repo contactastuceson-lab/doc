@@ -5,39 +5,42 @@ icon: "award"
 sidebarTitle: "Les certifications"
 ---
 
-Les certifications permettent d'obtenir un badge de vérification officiel. Le processus combine un questionnaire, un paiement sécurisé et une revue par l'équipe eza. Une fois approuvé, le badge apparaît sur votre profil et toutes vos publications.
+Les certifications permettent d'obtenir un badge de vérification officiel. Le processus combine un questionnaire, un paiement Stripe et une revue par l'équipe eza.
 
-## Demander une certification
-
-Vous soumettez une demande avec un questionnaire et des preuves, vous réglez les frais (paiement sécurisé), puis l'équipe eza examine votre demande. En cas d'approbation, le badge est ajouté à votre profil.
+## Flux utilisateur
 
 <Steps>
 </Steps>
 
+## L'entité `CertificationRequest`
+
+Chaque demande contient :
+
+- Email, nom, statut (`pending`, `approved`, `rejected`).
+- Réponses au questionnaire (`responses`).
+- Date de soumission.
+- Statut de paiement, IDs Stripe.
+- Notes admin (invisibles côté utilisateur).
+
 <Tip>
-  **Paiement sécurisé.** Le paiement des frais de certification se fait en ligne de façon sécurisée. eza ne stocke jamais vos données de carte.
+  **Paiement sécurisé.** Le paiement des frais de certification passe par Stripe. eza ne stocke jamais vos données de carte.
 </Tip>
 
-## Les types de badges
+## Suivre ma demande
 
-Chaque badge a un sens précis. Ils sont affichés sur votre profil, vos publications, vos stories et vos Spaces.
+Vous suivez l'avancement en temps réel dans « Suivi de certifications » (page profil).
 
-| Badge | Signification |
-| --- | --- |
-| Vérifié | Votre identité est vérifiée (preuve d'identité). |
-| Pro | Votre activité professionnelle est confirmée. |
-| Certifié | Vous avez passé la certification eza. |
-| Officiel | Compte officiel (équipe eza / organisation vérifiée). |
+- Statut en direct de votre demande.
+- Page de confirmation `/certification-success` après approbation.
+- Remboursement possible en cas de refus (`refundCertification`).
+- Historique complet de vos demandes.
+
+## Sécurité (RLS)
+
+- Création : réservée au propriétaire (`user_email`).
+- Lecture : propriétaire ou admin.
+- Mise à jour / suppression : admin uniquement.
 
 <Note>
   **Un signal de confiance.** Un badge de certification n'est pas cosmétique : il signale que votre identité ou votre statut a été vérifié par eza. C'est un gage de confiance pour les clients et la communauté.
 </Note>
-
-## Suivre ma demande
-
-Vous suivez l'avancement de votre demande en temps réel. En cas de refus, un remboursement est possible. Vous gardez l'historique de toutes vos demandes.
-
-- Statut en temps réel de votre demande.
-- Page de confirmation une fois approuvée.
-- Remboursement possible en cas de refus.
-- Historique complet de vos demandes.

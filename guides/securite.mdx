@@ -5,37 +5,67 @@ description: "Protéger son compte et ses données"
 icon: "lock"
 ---
 
-Votre compte contient votre identité, vos crédits et vos données. Voici comment le protéger : mot de passe fort, double authentification, gestion des appareils et confidentialité.
+Votre compte contient votre identité, vos crédits et vos données. Voici comment le protéger : mot de passe fort, double authentification, gestion des appareils et confidentialité RGPD.
 
 ## Activer la double authentification (2FA)
 
-La 2FA ajoute une couche de sécurité : même si quelqu'un connaît votre mot de passe, il ne peut pas se connecter sans votre code.
+La 2FA ajoute une couche de sécurité : même si quelqu'un connaît votre mot de passe, il ne peut pas se connecter sans votre code TOTP.
 
 <Steps>
 </Steps>
 
 <Warning>
-  **Conservez votre code de récupération.** Gardez précieusement le code de récupération fourni lors de l'activation. Sans lui, vous pourriez perdre l'accès à votre compte si vous perdez votre téléphone.
+  **Conservez votre code de récupération.** Gardez précieusement le code fourni lors de l'activation. Sans lui, vous pourriez perdre l'accès à votre compte si vous perdez votre téléphone.
 </Warning>
 
 ## Gérer mes appareils connectés
 
-Vous pouvez voir tous les appareils connectés à votre compte et révoquer ceux que vous ne reconnaissez pas.
+Chaque connexion crée une session d'appareil (`DeviceSession`) enregistrée automatiquement.
 
-- « Sécurité » › « Appareils connectés ».
-- Chaque appareil est listé avec sa dernière connexion.
-- Appuyez sur « Révoquer » pour déconnecter un appareil.
-- En cas de doute, révoquez tout et re-connectez-vous proprement.
+Chaque session contient :
 
-## Confidentialité & suppression de compte
+- Navigateur (Chrome, Firefox, Safari, Edge).
+- Système d'exploitation (Windows, macOS, Linux, iOS, Android).
+- Type d'appareil (desktop, mobile, tablet).
+- Adresse IP de connexion.
+- User-Agent.
+- Timestamp de dernière activité.
 
-Vous contrôlez vos données : qui voit votre profil, vos posts, et vous pouvez demander la suppression de votre compte (droit RGPD).
+Depuis « Sécurité » › « Appareils connectés » :
 
-- Réglez la visibilité de vos posts (public, abonnés, certifiés).
-- Gérez votre liste de blocs (qui ne peut plus vous contacter).
-- Demandez la suppression de votre compte depuis « Account Deletion ».
-- Vos données sont traitées conformément au RGPD européen.
+- Voir tous les appareils avec dernière activité.
+- L'appareil actuel est mis en évidence (en vert).
+- Déconnecter un appareil spécifique (`disconnectDevice`).
+- Déconnecter tous les autres appareils (`disconnectAllOtherDevices`).
+
+## Confidentialité RGPD
+
+Vous contrôlez vos données conformément au RGPD européen.
+
+- **Réglez la visibilité** de vos posts (public, abonnés).
+- **Statut en ligne** : afficher ou masquer.
+- **Blocages** : liste des utilisateurs bloqués (entité `Block`).
+- **Tableau de bord RGPD** : `RGPDDashboard` regroupe vos droits.
+- **Export** de vos données possible sur demande.
+
+## Suppression de compte
+
+Vous pouvez demander la suppression via `/account-deletion`.
+
+<Steps>
+</Steps>
+
+Le support peut refuser dans des cas exceptionnels (`refuseDeletionRequest`) : litige en cours, obligation légale.
+
+## Mot de passe oublié
+
+<Steps>
+</Steps>
 
 <Tip>
-  **Mot de passe oublié.** Sur la page de connexion, appuyez sur « Mot de passe oublié » : un email de réinitialisation vous est envoyé. Vérifiez vos spams.
+  **Vérifiez vos spams.** Le lien de réinitialisation arrive par email. S'il n'apparaît pas en 2 minutes, regardez dans les spams.
 </Tip>
+
+## Bannière cookies
+
+Un `CookieBanner` demande votre consentement à la première visite, conformément au RGPD. Vous pouvez le régler à tout moment depuis `/legal/cookies`.

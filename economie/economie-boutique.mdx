@@ -5,17 +5,54 @@ icon: "bag-shopping"
 sidebarTitle: "La boutique"
 ---
 
-## Catalogue
+La boutique vend des packs de crédits (en euros), des abonnements qui débloquent des avantages, et des tokens consommables.
 
-La boutique EZA regroupe produits digitaux, services, formations et contenus premium proposés par la communauté.
+## Acheter des crédits
 
-## Vendre sur EZA
+<Steps>
+</Steps>
 
-- Créer une fiche produit
-- Fixer un prix en crédits
-- Gérer stock et livraisons
-- Recevoir avis et notations
+<Tip>
+  **Paiement sécurisé.** Le paiement passe par Stripe. eza ne stocke jamais vos données de carte.
+</Tip>
 
-## Acheter
+## Les abonnements
 
-Paiement instantané en crédits, historique d'achats et protection acheteur incluse.
+Quatre paliers débloquent progressivement plus d'avantages.
+
+| Palier | Avantages |
+| --- | --- |
+| Gratuit | Accès de base : réseau social, forum, communautés. |
+| Pro | Plus de crédits, avantages créateur, statistiques avancées. |
+| Business | Publicité, posts sponsorisés, capacité étendue, communauté premium. |
+| Enterprise | Tout Business \+ vérification entreprise, support prioritaire. |
+
+Vous gérez votre abonnement depuis le portail Stripe (`createBillingPortal`) :
+
+- Voir vos factures.
+- Changer de moyen de paiement.
+- Annuler à tout moment (`cancelSubscription`).
+
+<Note>
+  **Annulation.** L'annulation prend effet à la fin de la période payée. Votre abonnement reste actif jusque-là.
+</Note>
+
+## Les tokens (avantages consommables)
+
+Les tokens sont des avantages consommables au moment de votre choix :
+
+- **Boost** : plus de visibilité pour un post pendant X heures.
+- **Épinglage 24h ou 7 jours** : votre post en haut du fil de la communauté.
+- **Design premium** : communauté avec un look amélioré.
+- **Capacité étendue** : plus de membres pour une communauté.
+
+## Dons
+
+En parallèle, eza propose un système de dons via Stripe :
+
+- Page `/donation` : faire un don.
+- Page `/donation-success` : confirmation.
+- Fonction `createDonationPayment` (Stripe) puis `syncStripeDonations`.
+- Confirmation par email : `sendDonationConfirmation`.
+
+Les dons apparaissent sur les pages profil/écosystème selon la visibilité choisie.

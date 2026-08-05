@@ -5,43 +5,72 @@ icon: "briefcase"
 sidebarTitle: "Mon portfolio"
 ---
 
-Le portfolio est votre vitrine professionnelle sur eza. Il présente vos projets, filtrables par catégorie, avec des comparaisons avant/après interactives, une carte géographique pour les projets localisés et des avis clients notés en étoiles. C'est l'outil le plus convaincant pour prouver ce que vous savez faire.
+Le portfolio est la vitrine professionnelle d'eza. Il présente des projets, filtrables par catégorie, avec des comparaisons avant/après interactives, une carte géographique et des avis clients notés en étoiles.
 
-## Mes projets
+## Page `/portfolio`
 
-Chaque projet a un titre, une catégorie, des photos et vidéos, une description et des mots-clés. Vos projets sont filtrables par catégorie et apparaissent dans une galerie élégante. Un projet peut être placé sur la carte si sa localisation compte.
+La page portfolio se compose de :
 
-<Steps>
-</Steps>
+- **Hero** : titre « Portfolio EZA » et description.
+- **Galerie** : filtres par catégorie, grille de cartes, ouverture d'un détail au clic (médias, description, tags, avis clients).
+- **Comparaisons avant / après** : sliders glissables.
+- **Carte interactive** : projets géolocalisés.
+
+## Les projets
+
+Chaque projet contient :
+
+- Titre, description, tags.
+- Catégorie : événement, inspection, chantier, particulier, entreprise, formation.
+- Média : image, YouTube, TikTok, Instagram ou Vimeo.
+- URL du média et miniature.
+- Nom du client, date de réalisation.
+- Marqueurs : vedette, publié, ordre d'affichage.
+
+### Rendu média
+
+| Type | Rendu |
+| --- | --- |
+| `image` | Image directe. |
+| `youtube` | Embed iframe (extraction automatique de l'ID). |
+| `tiktok` / `instagram` / `vimeo` | Miniature \+ lien externe. |
 
 <Tip>
   **Plus c'est visuel, mieux c'est.** Ajoutez plusieurs photos et vidéos à chaque projet : un visuel vaut mille mots. Le portfolio est votre meilleure carte de visite.
 </Tip>
 
-## Les comparaisons avant / après
+## Comparaisons avant / après
 
-Le portfolio propose des comparaisons avant/après avec un curseur interactif : on glisse de gauche à droite pour révéler la transformation. C'est l'effet le plus parlant pour montrer un résultat de prestation.
+Le portfolio propose des comparaisons avant/après avec un curseur interactif (`BeforeAfterSlider`) : on glisse de gauche à droite pour révéler la transformation.
 
-- Curseur interactif : on fait glisser pour comparer.
-- Idéal pour les rénovations, transformations et refontes.
-- Effet « waouh » qui transforme un visiteur hésitant en client.
+Chaque comparaison contient :
+
+- Titre et catégorie.
+- Image « avant » et image « après ».
+- Libellés personnalisés.
+- Description, ordre d'affichage, statut publié.
 
 <Note>
-  **Preuve sociale maximale.** Montrez le résultat réel d'une prestation plutôt qu'une promesse. Un curseur avant/après vaut mille mots et convertit mieux que n'importe quel argument.
+  **Preuve sociale maximale.** Montrez le résultat réel d'une prestation. Un curseur avant/après convertit mieux que n'importe quel argument.
 </Note>
 
-## Les avis clients
+## Avis clients
 
-Vos clients peuvent laisser des avis notés en étoiles (1 à 5) avec un commentaire. Ces avis apparaissent sur votre portfolio et renforcent votre crédibilité auprès des futurs clients.
+Chaque projet peut recevoir des avis :
 
-- Notes de 1 à 5 étoiles \+ commentaire libre.
-- Affichés publiquement sur votre portfolio.
-- Plus d'avis positifs = plus de confiance des futurs clients.
+- Note en étoiles de 1 à 5.
+- Commentaire optionnel.
+- Pour les utilisateurs connectés : pré-rempli avec leur profil.
+- Pour les invités : saisie du nom.
+- Badge « Client vérifié » attribué après validation par la modération.
+- Moyenne des notes affichée automatiquement.
 
-## La carte interactive
+## Carte interactive
 
-Les projets localisés apparaissent sur une carte interactive. Chaque marqueur ouvre le détail du projet. C'est idéal pour les prestations où la géographie compte (photographie locale, construction, services sur site).
+Les projets localisés apparaissent sur une carte Leaflet.
 
-- Carte zoomable avec un marqueur par projet.
-- Filtre par catégorie superposé à la carte.
-- Parfait pour les prestations géolocalisées.
+- Titre, ville, catégorie (immobilier, mariage, tourisme).
+- Coordonnées latitude/longitude.
+- Miniature et ID YouTube optionnels.
+- Filtre par catégorie superposé.
+- Marqueurs cliquables ouvrant le détail du projet.

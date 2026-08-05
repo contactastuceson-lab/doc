@@ -5,36 +5,45 @@ icon: "user-plus"
 sidebarTitle: "Le parrainage"
 ---
 
-Le parrainage récompense l'apport de nouveaux membres. Vous partagez votre code de parrainage, vos invités rejoignent eza, et vous gagnez des crédits à chaque étape. Plus vous parrainez, plus vous gagnez.
+Le parrainage récompense l'apport de nouveaux membres. Vous partagez votre code (votre @username), vos invités rejoignent eza, et vous gagnez des crédits à chaque étape.
 
 ## Mon code de parrainage
 
-Votre code de parrainage est votre @username. Partagez-le à vos amis : quand ils s'inscrivent avec votre code, vous gagnez des crédits.
+Votre code de parrainage est votre @username. Vous le partagez librement.
 
 <Steps>
 </Steps>
 
 <Tip>
-  **Partagez largement.** Partagez votre lien sur vos réseaux, par message ou par email. Chaque inscription validée vous rapporte des crédits.
+  **Partagez largement.** Chaque inscription validée vous rapporte des crédits. Utilisez vos réseaux sociaux, vos messageries, ou votre communauté.
 </Tip>
 
 ## Les jalons
 
-Plus vous parrainez, plus vous débloquez des récompenses bonus à chaque jalon (1er, 5e, 10e filleul). Les récompenses se cumulent : inscription \+ chaque jalon atteint.
+Plus vous parrainez, plus vous débloquez des récompenses bonus.
 
 - Crédit initial à la première inscription d'un filleul.
-- Récompenses bonus à chaque jalon (5e, 10e filleul).
-- Cumul progressif : plus de parrainages = plus de gains.
-- Suivez votre progression vers le prochain jalon.
+- Récompenses bonus à chaque jalon (5e, 10e, 25e, 50e filleul).
+- Les récompenses se cumulent : inscription \+ chaque jalon atteint.
+- Suivez votre progression vers le prochain jalon depuis la page Parrainage.
+
+## L'entité `Referral`
+
+Chaque parrainage crée une entité `Referral` :
+
+- Parrain (`referrer_id`).
+- Filleul (`referred_id`).
+- Statut (`pending`, `validated`, `revoked`).
+- Récompenses attribuées (`rewards`).
 
 <Note>
-  **Suivez vos gains.** La page Parrainage affiche votre code, vos filleuls, vos gains et votre progression vers le prochain jalon.
+  **Suivez vos gains.** La page Parrainage affiche votre code, la liste de vos filleuls, vos gains cumulés et votre progression.
 </Note>
 
 ## Jouer loyalement
 
-Les tentatives de fraude (multi-comptes, robots d'inscription) sont détectées automatiquement et peuvent entraîner l'annulation des récompenses et un bannissement. Parrainez de vraies personnes.
+Les tentatives de fraude (multi-comptes, robots d'inscription) sont détectées automatiquement.
 
 <Warning>
-  **Pas de triche.** Chaque parrainage est vérifié. La fraude (multi-comptes, bots) entraîne l'annulation des récompenses et peut bloquer votre compte. Jouez le jeu.
+  **Pas de triche.** Chaque parrainage est vérifié. La fraude (multi-comptes, bots) entraîne l'annulation des récompenses (`revoked`) et peut bloquer votre compte. Parrainez de vraies personnes.
 </Warning>

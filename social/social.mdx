@@ -5,45 +5,56 @@ icon: "newspaper"
 sidebarTitle: "Le fil d'actualités"
 ---
 
-Le fil d'actualités est le cœur d'eza. Vous y publiez du contenu (texte, photos, vidéos, sondages), vous réagissez (likes, réponses, partages) et vous suivez d'autres comptes. Les hashtags et mentions sont détectés automatiquement, et la visibilité de vos posts est réglable.
+Le fil d'actualité est le cœur d'eza. Vous y publiez du contenu (texte, photos, vidéos, sondages), vous réagissez (likes, réponses, partages) et vous suivez d'autres comptes. Les hashtags et mentions sont détectés automatiquement.
+
+## Anatomie d'une publication
+
+Une publication contient :
+
+- **Contenu texte** avec hashtags `#` et mentions `@username` détectés automatiquement.
+- **Médias** : images, vidéos, GIFs (via GIPHY).
+- **Sondages** : question \+ options \+ votes en temps réel.
+- **Likes** et compteur `likes_count`.
+- **Réponses** (fil de discussion sous le post).
+- **Vues** comptées automatiquement.
+- **Épinglage** possible.
+- **Visibilité** : `public` ou `followers`.
+- **Auteur** (snapshot : nom, username, avatar, vérifications).
 
 ## Publier du contenu
-
-Une publication peut être du texte seul, ou accompagnée de photos, de vidéos ou de GIFs. Vous rédigez depuis le bouton « Publier » et vous choisissez qui peut voir votre post.
 
 <Steps>
 </Steps>
 
 <Tip>
-  **Hashtags & mentions.** Tapez # suivi d'un mot pour créer un hashtag (ex : #photo) et @ suivi d'un pseudo pour mentionner quelqu'un (ex : @enor). Les hashtags rendent votre publication trouvable.
+  **Autocomplétion des mentions.** Quand vous tapez @, une liste de suggestions apparaît pour choisir le bon @username sans faute de frappe.
 </Tip>
 
 ## Réagir et interagir
 
-Chaque publication propose plusieurs actions pour interagir avec la communauté. Vos likes, réponses et partages sont visibles en temps réel par l'auteur et par les autres personnes qui regardent.
-
 | Action | Détail |
 | --- | --- |
-| J'aime | Un clic pour montrer que vous appréciez un post. |
-| Répondre | Créer une conversation sous le post. |
-| Reposter | Partager un post sur votre propre fil. |
-| Citer | Reposter en ajoutant votre commentaire. |
-| Signaler | Prévenir l'équipe en cas de contenu problématique. |
+| J'aime | Ajoute votre ID à `liked_by`, incrémente le compteur. |
+| Répondre | Crée une réponse liée au post (fil de discussion). |
+| Partager | Copie le lien de partage du post. |
+| Signaler | Ouvre le formulaire de signalement (modération). |
+| Éditer | Réservé à l'auteur ou à un admin. |
+| Supprimer | Réservé à l'auteur ou à un admin. |
 
-## Suivre des comptes
+## Hashtags et tendances
 
-Vous pouvez vous abonner aux comptes qui vous intéressent. Vos abonnements alimentent votre fil d'actualités. La page Explorer vous aide à découvrir de nouveaux profils à suivre.
+- Les hashtags sont extraits automatiquement du contenu.
+- La sidebar droite affiche les **tendances** : les hashtags les plus utilisés, calculés à partir des posts et des discussions du forum.
+- Recherche par hashtag via `/?tag=monTag`.
 
-- Abonnez-vous pour voir les posts d'un compte dans votre fil.
-- La page Explorer suggère des profils à suivre.
-- Chaque profil public affiche ses publications et ses statistiques.
-- Créez des listes personnalisées pour organiser vos abonnements.
-- Mettez des posts en signet pour les retrouver plus tard.
+## Suivi (Follow)
 
-## Qui voit mes publications ?
+- Suivez les comptes qui vous intéressent pour voir leurs posts dans votre fil.
+- La sidebar suggère des utilisateurs à découvrir.
+- Page `/discover` pour explorer plus largement.
 
-Vous contrôlez la portée de chaque publication. Par défaut, vos posts sont visibles par tout le monde, mais vous pouvez limiter à vos abonnés, aux comptes certifiés ou au cercle eza.
+## Visibilité
 
 <Note>
-  **Visibilité sélective.** Un post en visibilité « certifiés » n'est visible que par les comptes certifiés, idéal pour des annonces réservées aux professionnels vérifiés.
+  **`public` ou `followers`.** Un post `public` est visible par tout le monde, même sans compte. Un post `followers` n'est visible que par vos abonnés. Choisissez au moment de publier.
 </Note>
