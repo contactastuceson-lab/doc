@@ -104,8 +104,8 @@
     ]
   },
   "logo": {
-    "light": "/images/1782606023373-Photoroom.png",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.svg",
+    "dark": "/images/1782606023373-Photoroom.png"
   },
   "navbar": {
     "links": [
