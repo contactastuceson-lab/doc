@@ -5,65 +5,78 @@ icon: "eye"
 sidebarTitle: "La plateforme"
 ---
 
-eza est une application tout-en-un qui réunit un réseau social, une messagerie, un forum, des communautés, des salons audio en direct, des stories, un portfolio, un blog, des événements, des certifications et un système de crédits, le tout dans une seule app installable sur votre téléphone.
+**eza** est une plateforme communautaire construite autour de plusieurs pôles réunis dans une seule application web progressive (PWA), installable sur iOS et Android depuis le même code.
+
+## Une plateforme, plusieurs pôles
+
+- **Réseau social** : fil d'actualité, publications (texte, médias, GIFs, sondages), likes, réponses, mentions, hashtags, suivi d'utilisateurs.
+- **Messagerie** : conversations 1-à-1 avec demandes de contact, modération, messages officiels.
+- **Forum** : discussions thématiques, réponses, likes, catégories, épinglage, annonces.
+- **Portfolio** : galerie de projets réalisés, comparaisons avant/après, avis clients, carte interactive.
+- **Blog** : articles d'actualité, conseils, techniques, catégories, temps de lecture.
+- **Certifications** : demande de certification (questionnaire \+ paiement Stripe), badges de vérification.
+- **Affiliations & Écosystème** : rattachement d'un utilisateur à une organisation, logos d'affiliation visibles publiquement.
+- **Business Space** : espace dédié aux organisations et comptes business.
+- **Donations** : soutien financier via Stripe.
+- **Notifications** : push web (VAPID), email, in-app.
 
 ## Une seule application, un seul compte
 
-Là où la plupart des communautés s'éparpillent entre cinq ou six sites différents, eza réunit tout au même endroit. Vous créez un compte une fois et accédez à tout de suite. Votre profil, vos badges, votre solde de crédits et vos affiliations vous suivent partout, sans jamais rien re-configurer.
+Là où la plupart des communautés s'éparpillent entre plusieurs sites, eza réunit tout au même endroit. Vous créez un compte une fois et accédez à tout. Votre profil, vos badges, votre solde de crédits et vos affiliations vous suivent partout.
 
-- Un seul compte pour tous les espaces de la plateforme.
-- Une seule identité : votre profil et vos badges sont partagés partout.
-- Un seul solde de crédits, utilisable dans toute eza.
+- Un seul compte pour tous les espaces.
+- Une seule identité : profil et badges partagés.
+- Un seul solde de crédits, utilisable partout.
 - Une app installable sur iPhone et Android depuis le même code.
 
 <Tip>
-  **Tout est connecté.** Un créateur qui publie un post est aussi un membre de communauté, un certifié, un parrain et un acheteur de billets, sans jamais changer d'application. Votre réputation se construit une fois et se déploie partout.
+  **Tout est connecté.** Un créateur qui publie un post est aussi un membre de communauté, un certifié, un parrain et un acheteur de billets, sans jamais changer d'application.
 </Tip>
 
-## Les grands espaces
+## Pages publiques
 
-eza s'organise autour d'une quinzaine d'espaces qui partagent la même identité et les mêmes utilisateurs. Chacun a sa page et ses propres interactions, mais tout est interconnecté.
+Accessibles sans connexion :
 
-| Espace | Rôle |
+| Route | Contenu |
 | --- | --- |
-| Réseau social | Publier, aimer, répondre, mentionner, partager. |
-| Messagerie | Conversations privées en temps réel. |
-| Forum | Discussions thématiques, questions et réponses. |
-| Communautés | Groupes thématiques avec leurs propres règles. |
-| Spaces | Salons audio en direct, façon radio interactive. |
-| Stories | Contenus éphémères qui disparaissent après 24h. |
-| Portfolio | Vitrine de vos projets et avis clients. |
-| Blog | Articles d'actualité, conseils et tutoriels. |
-| Événements | Inscriptions en ligne et billetterie. |
-| Crédits | La monnaie interne d'eza, gagnée et dépensée. |
-| Certifications | Badges de vérification officiels. |
-| Support Nexus | Une IA qui vous répond et peut agir sur votre compte. |
+| `/` | Fil d'actualité \+ sidebars |
+| `/about` | À propos |
+| `/blog` | Liste des articles |
+| `/blog/:id` | Article complet |
+| `/discover` | Découverte d'utilisateurs et sujets |
+| `/portfolio` | Galerie de projets \+ avant/après |
+| `/forum` | Liste des discussions |
+| `/forum/:id` | Discussion \+ réponses |
+| `/enor` | Biographie Enor |
+| `/ecosysteme` | Écosystème et affiliations |
+| `/business` | Espace business |
+| `/post/:id` | Détail d'une publication |
+| `/@username` | Profil public d'un utilisateur |
+| `/donation` | Faire un don |
+| `/uptime` | Statut des services |
 
-## Pour qui ?
+## PWA installable
 
-eza s'adresse à tout le monde : créateurs, clients, communautés et organisations. Que vous vouliez partager votre travail, trouver un prestataire, échanger avec une communauté ou promouvoir votre entreprise, il y a une place pour vous.
+eza est une application web progressive (PWA), installable sur votre téléphone.
 
-| Profil | Usage |
-| --- | --- |
-| Créateurs | Publier, raconter, construire une audience. |
-| Clients | Découvrir des prestataires, demander des devis. |
-| Communauté | Échanger sur le forum, dans les communautés et les Spaces. |
-| Organisations | Affilier votre entreprise, afficher votre logo, recruter. |
-| Professionnels | Obtenir un badge de certification et gagner en crédibilité. |
-
-<Note>
-  **Tous profils bienvenus.** Que vous soyez solo, une petite entreprise, une association ou un grand groupe, eza s'adapte. Les abonnements (gratuit à Enterprise) débloquent progressivement plus d'avantages et d'outils.
-</Note>
-
-## Une app pensée comme une vraie application
-
-eza est rapide, tactile et conçue pour le mobile. Vous pouvez l'installer sur l'écran d'accueil de votre téléphone pour une expérience plein écran, comme une vraie app native. Le design est sombre par défaut avec un thème clair disponible, et l'accessibilité est soignée.
-
-- Installable sur iPhone et Android (PWA), plein écran, comme une app native.
-- Design sombre élégant \+ thème clair au choix.
-- Optimisée pour le mobile : tactile, rapide, fluide.
-- Notifications sur votre téléphone, même quand l'app est fermée.
+- Installable sur iPhone et Android, plein écran, comme une app native.
+- Design sombre par défaut (Dark Sky) \+ thème clair disponible.
+- Support offline partiel.
+- Notifications push web sur votre téléphone, même quand l'app est fermée.
+- Optimisée mobile : tactile, rapide, fluide (safe areas, momentum scroll).
 
 <Tip>
   **Installez eza.** Depuis votre navigateur, menu « Ajouter à l'écran d'accueil ». Vous obtenez une icône sur votre téléphone et une app plein écran, sans passer par un store.
 </Tip>
+
+## Thèmes et préférences
+
+Vous personnalisez eza dans vos paramètres :
+
+- **Thème** : automatique, clair (light), ou sombre (dark, défaut).
+- **Langue** : français, anglais, espagnol, allemand.
+- **Mode compact** : réduit paddings et tailles pour plus de densité.
+- **Statut en ligne** : afficher ou masquer votre présence.
+- **Notifications** : 9 réglages fins, activables individuellement.
+
+Vos préférences sont enregistrées et vous suivent sur tous vos appareils.
