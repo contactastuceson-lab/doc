@@ -97,7 +97,12 @@
     "dark": "/images/1782605365815-ezgif.com-crop.png"
   },
   "navbar": {
-    "links": [],
+    "links": [
+      {
+        "href": "https://ezagroup.org",
+        "label": "Eza"
+      }
+    ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
