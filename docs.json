@@ -46,10 +46,8 @@
         "icon": "compass",
         "pages": [
           "plateforme/overview",
-          "plateforme/stack",
           "plateforme/portfolio",
-          "plateforme/blog",
-          "plateforme/events"
+          "plateforme/blog"
         ]
       },
       {
@@ -60,27 +58,48 @@
           "social/messaging",
           "social/forum",
           "social/communities",
-          "social/stories"
+          "social/stories",
+          "social/spaces"
         ]
       },
       {
         "group": "Économie & crédits",
         "icon": "coins",
         "pages": [
+          "plateforme/events",
+          "economie/economie-credits",
           "economie/economie-boutique",
           "economie/banque",
-          "economie/parrainage"
+          "economie/parrainage",
+          "economie/ads"
         ]
       },
       {
         "group": "Identité & confiance",
         "icon": "shield-check",
-        "pages": []
+        "pages": [
+          "identite/profile",
+          "identite/certifications",
+          "identite/affiliations",
+          "identite/enor",
+          "identite/support"
+        ]
       },
       {
         "group": "Modes d'emploi",
         "icon": "wrench",
-        "pages": []
+        "pages": [
+          "guides/demarrer",
+          "guides/publier",
+          "guides/credits",
+          "guides/evenement",
+          "guides/communaute",
+          "guides/story",
+          "guides/space",
+          "guides/securite",
+          "guides/notifications",
+          "guides/aide"
+        ]
       }
     ]
   },
