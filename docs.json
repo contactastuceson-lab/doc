@@ -3,8 +3,8 @@
   "theme": "mint",
   "name": "EZA-documentation",
   "colors": {
-    "primary": "#38aadc",
-    "light": "#1dd8b4",
+    "primary": "#000dff",
+    "light": "#ff0500",
     "dark": "#1a4a6b"
   },
   "favicon": "/favicon.svg",
