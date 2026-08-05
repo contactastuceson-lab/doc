@@ -115,3 +115,142 @@ Les projets localisés apparaissent sur une carte Leaflet.
 <Tip>
   **Plus c'est visuel, mieux c'est.** Ajoutez plusieurs photos et une vidéo à chaque projet. Le portfolio est votre meilleure carte de visite.
 </Tip>
+
+## L'entité `Project`
+
+Chaque projet du portfolio est stocké dans l'entité `Project` de Base44.
+
+| Champ | Type | Description |
+| --- | --- | --- |
+| `title` | string | Titre du projet |
+| `description` | string | Contexte, résultat obtenu |
+| `category` | enum | événement, inspection, chantier, particulier, entreprise, formation |
+| `media` | array | Objets `{type, url, thumbnail}` |
+| `location` | object | `{city, lat, lng}` pour la carte |
+| `client_name` | string | Nom du client (optionnel, public) |
+| `date` | date | Date de réalisation |
+| `tags` | array | Mots-clés indexés |
+| `is_featured` | boolean | Mis en avant sur la page |
+| `is_published` | boolean | Visible publiquement |
+| `order` | number | Ordre d'affichage |
+| `reviews_count` | number | Nombre d'avis reçus |
+| `average_rating` | number | Note moyenne (1-5) |
+
+## Types de médias supportés
+
+<CardGroup cols={2}>
+  <Card title="image" icon="image">
+    JPEG, PNG, WebP. Lazy loading via `LazyMedia`, compression automatique.
+  </Card>
+
+  <Card title="youtube" icon="video">
+    Embed iframe, ID extrait automatiquement depuis l'URL.
+  </Card>
+
+  <Card title="vimeo" icon="film">
+    Embed avec player Vimeo natif.
+  </Card>
+
+  <Card title="tiktok" icon="music">
+    Miniature \+ lien vers TikTok (embed limité).
+  </Card>
+
+  <Card title="instagram" icon="instagram">
+    Miniature \+ lien vers le post Instagram.
+  </Card>
+
+  <Card title="video" icon="play">
+    Fichier vidéo direct via `VideoPlayer`, contrôles natifs.
+  </Card>
+</CardGroup>
+
+## L'entité `BeforeAfterGallery`
+
+Chaque comparaison avant/après est une entité dédiée.
+
+| Champ | Description |
+| --- | --- |
+| `project_id` | Projet parent |
+| `before_url` | URL image avant |
+| `after_url` | URL image après |
+| `before_label` | Label personnalisé (défaut : « Avant ») |
+| `after_label` | Label personnalisé (défaut : « Après ») |
+| `order` | Ordre d'affichage |
+| `is_published` | Visible ou masqué |
+
+## L'entité `Review`
+
+Chaque avis client est stocké séparément pour permettre modération et vérification.
+
+| Champ | Description |
+| --- | --- |
+| `project_id` | Projet évalué |
+| `author_id` | Utilisateur eza si connecté |
+| `guest_name` | Nom saisi si invité |
+| `rating` | 1 à 5 étoiles |
+| `comment` | Texte libre optionnel |
+| `is_verified_client` | Badge « Client vérifié » |
+| `status` | `pending`, `approved`, `rejected` |
+| `admin_notes` | Notes internes modération |
+
+## Carte Leaflet
+
+Les projets géolocalisés apparaissent sur une carte OpenStreetMap via Leaflet.
+
+<CardGroup cols={2}>
+  <Card title="Marqueurs personnalisés" color="#38aadc" icon="map-pin">
+    Icône par catégorie, couleur par statut.
+  </Card>
+
+  <Card title="Clusters" color="#a78bfa" icon="layers">
+    Regroupement automatique aux forts zooms out.
+  </Card>
+
+  <Card title="Popup au clic" color="#1dd8b4" icon="message-square">
+    Titre, image, catégorie, lien vers le détail.
+  </Card>
+
+  <Card title="Filtres superposés" color="#f59e0b" icon="filter">
+    Catégorie, ville, tags, période.
+  </Card>
+</CardGroup>
+
+## Cas d'usage concrets
+
+<CardGroup cols={2}>
+  <Card title="Photographe événementiel" color="#fb7185" icon="camera">
+    Portfolio par type d'événement, avant/après retouche, avis mariés.
+  </Card>
+
+  <Card title="Artisan couvreur" color="#f59e0b" icon="hammer">
+    Inspections drone, chantiers documentés, cartes des interventions.
+  </Card>
+
+  <Card title="Formateur" color="#1dd8b4" icon="graduation-cap">
+    Sessions passées, témoignages stagiaires, projets étudiants.
+  </Card>
+
+  <Card title="Agence immobilière" color="#38aadc" icon="home">
+    Biens vendus, transformations avant/après, avis vendeurs.
+  </Card>
+</CardGroup>
+
+## FAQ Portfolio
+
+<AccordionGroup>
+  <Accordion title="Combien de projets puis-je publier ?">
+    Illimité pour les comptes actifs. Les comptes Business ont un affichage épinglé et un design premium.
+  </Accordion>
+
+  <Accordion title="Puis-je masquer un projet temporairement ?">
+    Oui : basculez `is_published` à `false`. Le projet reste dans votre espace mais devient invisible publiquement.
+  </Accordion>
+
+  <Accordion title="Les avis sont-ils modérés ?">
+    Oui, tous les avis passent par un statut `pending` avant publication. Un modérateur valide et peut attribuer le badge « Client vérifié ».
+  </Accordion>
+
+  <Accordion title="Puis-je exporter mon portfolio ?">
+    Oui, via RGPD → Export de données. Vous récupérez tous vos projets, médias et avis au format JSON.
+  </Accordion>
+</AccordionGroup>

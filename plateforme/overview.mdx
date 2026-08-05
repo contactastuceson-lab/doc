@@ -135,3 +135,109 @@ Accessibles sans compte :
     FR, EN, ES, DE. Contexte i18n global.
   </Card>
 </CardGroup>
+
+## Écosystème EZA Group
+
+<Frame>
+  EZA n'est pas qu'une app : c'est un écosystème.
+</Frame>
+
+<CardGroup cols={2}>
+  <Card title="/enor" icon="user-check" href="/identite/enor">
+    Biographie eNor, le fondateur. Parcours, vision, projets.
+  </Card>
+
+  <Card title="/ecosysteme" icon="network">
+    Toutes les entités du groupe EZA : entreprises, projets, alliances.
+  </Card>
+
+  <Card title="/business" icon="briefcase">
+    Espace business : offres, services, contact commercial.
+  </Card>
+
+  <Card title="/donation" icon="heart">
+    Soutenir eza avec un don libre via Stripe.
+  </Card>
+</CardGroup>
+
+## Rôles hiérarchiques
+
+12 rôles définissent la hiérarchie sur la plateforme (champ `role` de l'entité `User`).
+
+| Rôle | Description |
+| --- | --- |
+| `owner` | PDG propriétaire exclusif, pouvoirs illimités |
+| `pdg_adjoint` | PDG-Adjoint, pouvoirs équivalents |
+| `admin` | Administrateur système |
+| `conseil_admin` | Conseil d'administration |
+| `directeur` | Directeur de département |
+| `responsable` | Responsable de service |
+| `collaborateur_interne` | Collaborateur interne (staff) |
+| `event_manager` | Gestionnaire d'événements |
+| `pilote` | Pilote drone certifié |
+| `collaborateur` | Collaborateur externe |
+| `vip` | Utilisateur VIP |
+| `user` | Utilisateur standard (défaut) |
+
+## Statuts de compte
+
+| Statut | Effet |
+| --- | --- |
+| `active` | Compte pleinement opérationnel |
+| `suspended` | Suspendu temporairement (délai fixé) |
+| `banned` | Banni définitivement, données conservées |
+| `restricted` | Restreint (certaines actions bloquées) |
+
+<Note>
+  **Gel bancaire séparé.** Un compte peut avoir `bank_frozen: true` (portefeuille gelé) sans être banni. Motif conservé dans `bank_freeze_reason` avec date `bank_frozen_at`.
+</Note>
+
+## Design system détaillé
+
+### Palette Dark Sky (défaut)
+
+| Token | HSL | Hex |
+| --- | --- | --- |
+| `--background` | `214 50% 4%` | `#040a14` |
+| `--foreground` | `210 20% 94%` | `#f0f4f8` |
+| `--card` | `214 40% 7%` | `#0e1927` |
+| `--primary` | `205 90% 58%` | `#0ea5e9` |
+| `--accent` | `195 80% 50%` | `#7dd3fc` |
+| `--destructive` | `0 72% 51%` | `#ff6b6b` |
+| `--border` | `214 25% 14%` | `#1a2a47` |
+
+### Typographie
+
+| Usage | Police | Poids |
+| --- | --- | --- |
+| Titres (H1-H3) | Space Grotesk | 500-700 |
+| Corps de texte | Inter | 400-500 |
+| Code | JetBrains Mono | 400 |
+
+### Animations standard
+
+- `fade-up` : opacité 0→1 \+ translateY 30px→0 en 0.6s ease-out
+- `float` : translateY -12px en 6s infinite
+- Border-radius standard : 12px (0.75rem)
+- Transitions : 200-300ms ease-out
+- Shadow : `0 4px 12px rgba(0,0,0,0.15)`
+
+## FAQ générale
+
+<AccordionGroup>
+  <Accordion title="eza est-il gratuit ?">
+    Oui, toutes les fonctions essentielles sont gratuites. Certains services (certifications, boutique, campagnes ads) sont payants en crédits ou en euros via Stripe.
+  </Accordion>
+
+  <Accordion title="Puis-je supprimer mon compte ?">
+    Oui, via Paramètres → Confidentialité → « Supprimer mon compte ». Délai de rétractation de 30 jours pendant lequel vous pouvez annuler. Passé ce délai, suppression définitive (entité `DeletionRequest`).
+  </Accordion>
+
+  <Accordion title="Puis-je récupérer mon @username après l'avoir changé ?">
+    Oui pendant 30 jours : votre ancien username est stocké dans `DeletedUsername` et vous êtes prioritaire pour le récupérer.
+  </Accordion>
+
+  <Accordion title="Est-ce que mes données sont vendues ?">
+    Non. eza ne vend aucune donnée personnelle. Les services tiers (Stripe, SendGrid, Cloudflare) sont utilisés uniquement pour la technique.
+  </Accordion>
+</AccordionGroup>

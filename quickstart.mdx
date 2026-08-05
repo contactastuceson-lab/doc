@@ -4,97 +4,130 @@ description: "Créez votre compte EZA et découvrez la plateforme en quelques mi
 icon: "rocket"
 ---
 
-## 1. Créer votre compte
-
-Rendez-vous sur EZA et créez un compte en quelques secondes :
-
-<Steps>
-  <Step title="Inscription">
-    Renseignez votre email, un mot de passe et un pseudo unique.
-  </Step>
-  <Step title="Vérification">
-    Confirmez votre adresse email via le lien reçu.
-  </Step>
-  <Step title="Compléter votre profil">
-    Ajoutez une photo, une bio et vos centres d'intérêt pour personnaliser votre expérience.
-  </Step>
-</Steps>
-
-## 2. Explorer la communauté
-
-<CardGroup cols={2}>
-  <Card title="Fil social" icon="newspaper" href="/social/social">
-    Publiez, likez, commentez et suivez d'autres membres.
+<CardGroup cols={4}>
+  <Card title="1. Créer un compte" icon="user-plus">
   </Card>
 
-  <Card title="Messagerie" icon="message" href="/social/messaging">
-    Discutez en privé ou en groupe en temps réel.
+  <Card title="2. Vérifier l'email" icon="mail-bulk">
   </Card>
 
-  <Card title="Communautés" icon="users" href="/social/communities">
-    Rejoignez des groupes thématiques.
+  <Card title="3. Compléter le profil" icon="user">
   </Card>
 
-  <Card title="Stories" icon="circle-play" href="/social/stories">
-    Partagez des moments éphémères.
+  <Card title="4. Publier" icon="pen-square">
   </Card>
 </CardGroup>
 
-## 3. Débloquer l'économie EZA
-
-Utilisez vos crédits pour accéder à la boutique, booster vos publications ou parrainer des amis.
-
-<Card title="Guide des crédits" icon="coins" href="/economie/economie-credits">
-  Tout savoir sur le système économique EZA.
-</Card>
-
-## 4. Valoriser votre identité
-
-Ajoutez des certifications, affiliations et obtenez votre statut **ENOR** pour renforcer votre crédibilité sur la plateforme.
-
-<Card title="Système ENOR" icon="award" href="/identite/enor">
-  Découvrez comment fonctionne l'identité vérifiée.
-</Card>
-
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18\+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+## Étape 1 — Créer votre compte
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Ouvrir /register">
+    Depuis la page d'accueil, cliquez sur « S'inscrire ». URL directe : `/register`.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
+  <Step title="Remplir le formulaire">
+    Email (unique, format validé), mot de passe (8\+ caractères, majuscule, chiffre, spécial), prénom, nom, acceptation CGU \+ RGPD.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
+  <Step title="Vérifier votre email">
+    Un code à 6 chiffres est envoyé. Il expire en 10 minutes. Vérifiez vos spams si besoin.
+  </Step>
+  <Step title="Onboarding">
+    Sélectionnez vos centres d'intérêt (`interests`), vos raisons de rejoindre EZA (`join_reasons`), un code de parrainage éventuel.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+<Warning>
+  **Mot de passe fort.** Minimum 8 caractères, avec au moins une majuscule, un chiffre et un caractère spécial. Le formulaire affiche la force en temps réel : faible / moyen / fort.
+</Warning>
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+## Étape 2 — Configurer votre profil
+
+<Columns cols={2}>
+  <Card title="Champs de base" icon="user">
+    - `username` (unique, lowercase, réservable 30 jours)
+    - `display_name` (nom d'affichage)
+    - `bio` (255 caractères)
+    - `avatar_url` \+ `cover_url`
+    - `location`, `website`, `phone`
+  </Card>
+
+  <Card title="Champs avancés" icon="settings">
+    - `interests` (centres d'intérêt)
+    - `verifications` (badges obtenus)
+    - `notification_preferences` (9 toggles)
+    - `ui_preferences` (thème, langue, densité)
+  </Card>
+</Columns>
+
+<Tip>
+  **Choisissez bien votre `@username`.** C'est votre URL publique : `docs.ezagroup.org/@votrepseudo`. Il est réservé 30 jours si vous le changez.
 </Tip>
+
+## Étape 3 — Publier votre premier post
+
+<Steps>
+  <Step title="Ouvrir le composer">
+    Bouton « \+ Publier » depuis l'accueil ou raccourci clavier.
+  </Step>
+  <Step title="Rédiger">
+    Texte libre. Les `#hashtags` et `@mentions` sont extraits automatiquement (champs `hashtags`, `mentions` de l'entité `Post`).
+  </Step>
+  <Step title="Ajouter des médias">
+    Jusqu'à 4 images, une vidéo, un GIF GIPHY, ou un sondage (`poll` : question \+ options \+ `duration_hours`).
+  </Step>
+  <Step title="Choisir la portée">
+    `public` (visible partout) ou `followers` (abonnés uniquement) ou `certified` (utilisateurs certifiés) ou `eza_circle` (cercle privé).
+  </Step>
+  <Step title="Publier">
+    En ligne instantanément. Compteur de vues démarre.
+  </Step>
+</Steps>
+
+## Étape 4 — Sécuriser votre compte
+
+<CardGroup cols={2}>
+  <Card title="Activer 2FA" color="#38aadc" icon="shield-check">
+    3 méthodes : Email (6 chiffres), SMS, ou TOTP (Google Authenticator). TOTP recommandé : pas de dépendance réseau.
+  </Card>
+
+  <Card title="Codes de secours" color="#f59e0b" icon="key">
+    10 codes générés à l'activation TOTP. Téléchargez en PDF, gardez-les hors ligne.
+  </Card>
+
+  <Card title="Sessions actives" color="#a78bfa" icon="devices">
+    Voir tous les appareils connectés (`DeviceSession`) avec IP, navigateur, OS. Déconnectez ceux inconnus.
+  </Card>
+
+  <Card title="Historique de sécurité" color="#1dd8b4" icon="history">
+    `AuditLog` de toutes les actions sensibles : changements de mot de passe, 2FA, suppression sessions.
+  </Card>
+</CardGroup>
+
+## Récapitulatif : ce que vous savez faire
+
+<CardGroup cols={3}>
+       
+</CardGroup>
+
+## Étapes suivantes
+
+<CardGroup cols={2}>
+  <Card title="Portfolio" icon="map" href="/plateforme/portfolio">
+    Mettez en valeur vos projets et attirez des clients.
+  </Card>
+
+  <Card title="Certification" icon="badge-check" href="/identite/certifications">
+    Badge officiel via paiement Stripe et vérification humaine.
+  </Card>
+
+  <Card title="Boutique & crédits" icon="shopping-bag" href="/economie/economie-boutique">
+    4 tiers d'abonnement, packs de tokens, dons libres.
+  </Card>
+
+  <Card title="Parrainage" icon="users" href="/economie/parrainage">
+    Invitez, gagnez des crédits à chaque jalon franchi.
+  </Card>
+</CardGroup>
+
+<Note>
+  **Vous êtes bloqué à une étape ?** Ouvrez un ticket support : Nexus, l'agent IA, répond en secondes et peut agir directement sur votre compte (débloquer, corriger, rembourser).
+</Note>

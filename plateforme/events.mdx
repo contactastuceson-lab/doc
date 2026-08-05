@@ -61,3 +61,101 @@ sidebarTitle: "Les événements"
 | Suivre | Liste des inscrits, check-ins temps réel |
 | Valider | Scan des billets à l'entrée |
 | Analyser | Statistiques inscrits et revenus |
+
+## Les entités événement
+
+### `Event`
+
+| Champ | Description |
+| --- | --- |
+| `title`, `description` | Métadonnées |
+| `starts_at`, `ends_at` | Créneaux datetime |
+| `location` | Adresse ou visio |
+| `capacity` | Nombre max de participants |
+| `price_credits` | Coût en crédits (0 = gratuit) |
+| `organizer_id` | Organisateur |
+| `status` | `draft`, `open`, `closed`, `cancelled`, `completed` |
+| `cover_url` | Image de couverture |
+| `is_official` | Événement officiel eza |
+| `registrations_count` | Compteur automatique |
+| `checkin_count` | Nombre de scans validés |
+
+### `EventRegistration`
+
+| Champ | Description |
+| --- | --- |
+| `event_id` | Événement |
+| `user_id` | Participant |
+| `ticket_code` | Format `EZA-XXXXXXXX` |
+| `status` | `pending`, `confirmed`, `cancelled`, `checked_in` |
+| `credits_frozen` | Crédits gelés sur portefeuille |
+| `checkin_at` | Horodatage du scan |
+| `cancellation_reason` | Motif si annulation |
+
+## Fonctions événement
+
+| Fonction | Rôle |
+| --- | --- |
+| `registerForEvent` | Inscription \+ gel crédits \+ génération ticket |
+| `validateEventTicket` | Scan à l'entrée \+ passage en `checked_in` |
+| `cancelMyEventRegistration` | Annulation utilisateur |
+| `adminManageEvent` | CRUD événement côté admin |
+| `syncAppointmentToOutlook` | Sync vers calendrier Outlook |
+| `deleteOutlookAppointment` | Suppression du sync |
+
+## Format des tickets
+
+<Frame>
+  Chaque billet a un code unique : `EZA-AB12CD34`
+
+  - Préfixe fixe : `EZA-`
+  - 8 caractères alphanumériques majuscules
+  - Unique globalement
+  - Scannable en QR code
+  - Non-devinable (généré cryptographiquement)
+</Frame>
+
+## Sync calendrier
+
+<CardGroup cols={2}>
+  <Card title="Outlook" color="#38aadc" icon="calendar">
+    OAuth Microsoft, appointment créé dans le calendrier de l'utilisateur.
+  </Card>
+
+  <Card title="Google Calendar" color="#a78bfa" icon="calendar">
+    Champ `google_event_id` de l'entité `Appointment`.
+  </Card>
+
+  <Card title="iCal" color="#1dd8b4" icon="download">
+    Export `.ics` téléchargeable pour tout client mail.
+  </Card>
+
+  <Card title="Rappels" color="#f59e0b" icon="bell">
+    Notifications 24h et 1h avant l'événement.
+  </Card>
+</CardGroup>
+
+## Check-in
+
+<Steps>
+</Steps>
+
+## FAQ Événements
+
+<AccordionGroup>
+  <Accordion title="Que se passe-t-il si j'annule à la dernière minute ?">
+    Annulation possible jusqu'à 24h avant. Passé ce délai, les crédits gelés sont définitivement débités.
+  </Accordion>
+
+  <Accordion title="Puis-je transférer mon billet ?">
+    Non pour les événements payants (traçabilité). Oui pour les gratuits via partage du code.
+  </Accordion>
+
+  <Accordion title="L'événement est complet, y a-t-il une liste d'attente ?">
+    Oui automatique : inscrivez-vous, vous serez notifié si une place se libère.
+  </Accordion>
+
+  <Accordion title="Comment obtenir une facture ?">
+    Depuis « Mes événements » → « Télécharger la facture ». PDF généré via `generateQuotePDF`.
+  </Accordion>
+</AccordionGroup>

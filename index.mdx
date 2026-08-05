@@ -9,61 +9,155 @@ sidebarTitle: "Centre d'aide"
   <img
     alt="eza plateforme"
     className="mx-auto dark:hidden"
-    lightAlt="eza plateforme"
-    darkAlt="eza plateforme"
     src="/images/1782605365815.png"
   />
   <img
     alt="eza plateforme"
     className="mx-auto hidden dark:block"
-    lightAlt="eza plateforme"
-    darkAlt="eza plateforme"
     src="/images/1782605365815-1.png"
   />
 </Frame>
 
-## Bienvenue
+## Bienvenue sur eza
 
-**30 guides** clairs et pratiques pour maîtriser toute la plateforme : du réseau social à l'économie de crédits, des Spaces audio au support IA Nexus. Écrits pour vous, pas pour les développeurs.
+**eza** est une plateforme communautaire tout-en-un : réseau social, forum, messagerie, portfolio, blog, événements, communautés, Spaces audio, stories, économie de crédits, certifications et support IA. Un seul compte, une seule identité, une seule app installable en PWA.
 
 <CardGroup cols={4}>
-  <Card title="30 guides" icon="book">
+     
+</CardGroup>
+
+## Ce qu'eza fait pour vous
+
+<CardGroup cols={2}>
+  <Card title="Publier & discuter" color="#38aadc" icon="pen-square">
+    Posts, sondages, GIFs, hashtags, mentions, réponses en cascade.
   </Card>
 
-  <Card title="91 sections" icon="list">
+  <Card title="Rencontrer & rejoindre" color="#1dd8b4" icon="users">
+    Communautés thématiques, Spaces audio live, forum organisé.
   </Card>
 
-  <Card title="Live" icon="bolt">
+  <Card title="Vendre & être visible" color="#a78bfa" icon="briefcase">
+    Portfolio géolocalisé, blog, campagnes ads en crédits.
   </Card>
 
-  <Card title="RGPD" icon="shield-check">
+  <Card title="Gagner & dépenser" color="#f59e0b" icon="coins">
+    Économie de crédits interne, boutique, dons, parrainage.
+  </Card>
+
+  <Card title="Prouver votre identité" color="#fb7185" icon="badge-check">
+    Certifications payantes, affiliations organisationnelles, badges.
+  </Card>
+
+  <Card title="Être aidé instantanément" color="#6366f1" icon="life-buoy">
+    Nexus, agent IA qui agit vraiment sur votre compte.
   </Card>
 </CardGroup>
 
 ## Explorer la documentation
 
 <CardGroup cols={2}>
+  <Card title="Démarrage rapide" icon="rocket" href="/quickstart">
+    Créer un compte, configurer son profil, publier son premier post.
+  </Card>
+
   <Card title="Découvrir eza" icon="compass" href="/plateforme/overview">
-    La plateforme en un coup d'œil, portfolio et blog.
+    Vue d'ensemble, pages publiques, PWA, design system.
   </Card>
 
   <Card title="Social & communauté" icon="users" href="/social/social">
-    Fil, messagerie, forum, communautés, stories, Spaces audio.
+    Fil, messagerie, forum, communautés, Spaces, stories.
   </Card>
 
   <Card title="Économie & crédits" icon="coins" href="/economie/economie-credits">
-    Événements, crédits, boutique, banque, parrainage, publicité.
+    Crédits, boutique, banque, parrainage, publicités.
   </Card>
 
-  <Card title="Identité & confiance" icon="shield-check" href="/identite/profile">
-    Profil, certifications, affiliations, Enor et support Nexus.
+  <Card title="Identité & confiance" icon="badge-check" href="/identite/profile">
+    Profil, certifications, affiliations, Nexus, support.
   </Card>
 
-  <Card title="Modes d'emploi" icon="wrench" href="/guides/demarrer">
-    10 guides pratiques pour être opérationnel tout de suite.
+  <Card title="Modes d'emploi" icon="book-open" href="/guides/demarrer">
+    Tutoriels pas à pas pour toutes les fonctions.
+  </Card>
+</CardGroup>
+
+## Stack technique
+
+<CardGroup cols={3}>
+  <Card title="Frontend" icon="code">
+    React 18 \+ Vite, Tailwind, Framer Motion, react-quill, Leaflet, recharts.
   </Card>
 
-  <Card title="Démarrer maintenant" icon="rocket" href="/quickstart">
-    Créez votre compte et lancez-vous en quelques minutes.
+  <Card title="Backend" icon="server">
+    Base44 BaaS, 63 entités, 126 fonctions serverless, RLS strictes.
+  </Card>
+
+  <Card title="Paiements" icon="credit-card">
+    Stripe (checkout, portail, webhooks), tokens crédits, dons libres.
+  </Card>
+
+  <Card title="Notifications" icon="bell">
+    VAPID Web Push, Firebase FCM, emails transactionnels.
+  </Card>
+
+  <Card title="Real-time" icon="zap">
+    LiveKit pour Spaces audio/vidéo, WebSocket pour messagerie.
+  </Card>
+
+  <Card title="IA" icon="sparkles">
+    Nexus (support agentique), analyse toits, refine message.
+  </Card>
+</CardGroup>
+
+## Points forts
+
+<Columns cols={2}>
+  <Card title="🔐 RGPD natif" icon="shield-check">
+    Droit d'accès, portabilité, oubli sous 30 jours, audit log immuable, RLS par entité.
+  </Card>
+
+  <Card title="🌍 Multi-langue" icon="languages">
+    FR, EN, ES, DE. Contexte i18n global, préférences persistées par utilisateur.
+  </Card>
+
+  <Card title="📱 PWA installable" icon="smartphone">
+    iOS et Android depuis le même code, plein écran, notifications push natives.
+  </Card>
+
+  <Card title="🌗 Thème double" icon="palette">
+    Dark Sky (défaut) \+ Light. Palette bleu ciel `#0ea5e9`, transitions 300ms.
+  </Card>
+</Columns>
+
+## Chiffres clés du système
+
+| Métrique | Valeur |
+| --- | --- |
+| Entités de données | 63 |
+| Fonctions backend | 126 |
+| Pages applicatives | 64 |
+| Pôles fonctionnels | 12 |
+| Langues supportées | 4 (FR, EN, ES, DE) |
+| Rôles utilisateur | 12 hiérarchiques |
+| Statuts de compte | 4 (active, suspended, banned, restricted) |
+| Catégories forum | 7 |
+| Catégories communautés | 9 |
+| Types de vérifications | 6\+ (badges) |
+| Modes de 2FA | 3 (email, SMS, TOTP) |
+
+<Tip>
+  **Nouveau sur eza ?** Commencez par le [démarrage rapide](/quickstart), puis explorez à votre rythme. Chaque page est autonome et renvoie vers les concepts liés.
+</Tip>
+
+## Besoin d'aide immédiate
+
+<CardGroup cols={2}>
+  <Card title="Ouvrir un ticket" icon="life-buoy" href="/identite/support">
+    Nexus répond en secondes et agit sur votre compte.
+  </Card>
+
+  <Card title="FAQ générale" icon="circle-help" href="/guides/aide">
+    Réponses aux questions les plus fréquentes.
   </Card>
 </CardGroup>
