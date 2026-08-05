@@ -144,5 +144,15 @@
     "color": {
       "light": "#ffffff"
     }
+  },
+  "errors": {
+    "404": {
+      "redirect": false,
+      "title": "hooo non mauvais endroit "
+    }
+  },
+  "banner": {
+    "content": "bonjour tout le monde ",
+    "dismissible": false
   }
 }
