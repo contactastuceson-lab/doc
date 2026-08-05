@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "EZA",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#38aadc",
+    "light": "#1dd8b4",
+    "dark": "#1a4a6b"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -31,7 +31,54 @@
           "icon": "newspaper"
         }
       ]
-    }
+    },
+    "groups": [
+      {
+        "group": "Bienvenue",
+        "icon": "hand-wave",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Découvrir EZA",
+        "icon": "compass",
+        "pages": [
+          "plateforme/overview",
+          "plateforme/stack",
+          "plateforme/portfolio",
+          "plateforme/blog",
+          "plateforme/events"
+        ]
+      },
+      {
+        "group": "Social & communauté",
+        "icon": "users",
+        "pages": [
+          "social/social",
+          "social/messaging",
+          "social/forum",
+          "social/communities",
+          "social/stories"
+        ]
+      },
+      {
+        "group": "Économie & crédits",
+        "icon": "coins",
+        "pages": []
+      },
+      {
+        "group": "Identité & confiance",
+        "icon": "shield-check",
+        "pages": []
+      },
+      {
+        "group": "Modes d'emploi",
+        "icon": "wrench",
+        "pages": []
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
